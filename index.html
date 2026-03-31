@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="COREP's Travel — Agenzia di viaggi specializzata in pacchetti Adventure, Comfort e Luxury." />
+  <title>COREP's Travel — Agenzia di Viaggi</title>
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ===== NAVBAR ===== -->
+  <header class="navbar" role="banner">
+    <div class="navbar__interno">
+
+      <a href="index.html" class="navbar__logo">
+        COREP'<span>s</span> Travel
+      </a>
+
+      <!-- Menu di navigazione -->
+      <nav id="menu-principale" class="navbar__menu" role="navigation" aria-label="Navigazione principale">
+        <a href="index.html"      class="navbar__link attivo">Home</a>
+        <a href="adventure.html"  class="navbar__link">Adventure</a>
+        <a href="comfort.html"    class="navbar__link">Comfort</a>
+        <a href="luxury.html"     class="navbar__link">Luxury</a>
+        <a href="about.html"      class="navbar__link">Chi Siamo</a>
+        <a href="contatti.html"   class="navbar__link">Contatti</a>
+      </nav>
+
+      <!-- Hamburger mobile -->
+      <button
+        class="navbar__hamburger"
+        id="hamburger"
+        aria-label="Apri o chiudi il menu"
+        aria-expanded="false"
+        aria-controls="menu-principale"
+      >
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+    </div>
+  </header>
+
+
+  <!-- ===== CONTENUTO PRINCIPALE ===== -->
+  <main>
+
+    <!-- HERO -->
+    <section class="hero" aria-label="Intestazione principale">
+      <div class="hero__contenuto">
+        <span class="hero__etichetta">Agenzia di Viaggi dal 2010</span>
+        <h1 class="hero__titolo">Il mondo ti aspetta.<br />Noi ti ci portiamo.</h1>
+        <p class="hero__sottotitolo">
+          Pacchetti su misura per ogni tipo di viaggiatore:
+          avventura, comfort o lusso. Scegli la tua esperienza.
+        </p>
+        <div class="hero__bottoni">
+          <a href="#pacchetti" class="bottone bottone--primario">Scopri i pacchetti</a>
+          <a href="contatti.html" class="bottone bottone--outline-chiaro">Contattaci</a>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- STATISTICHE -->
+    <section class="sezione" aria-labelledby="titolo-stats">
+      <div class="contenitore">
+        <h2 id="titolo-stats" class="sr-only">I nostri numeri</h2>
+        <div class="barra-stats">
+          <article class="stat-card">
+            <p class="stat-card__numero">5.000+</p>
+            <p class="stat-card__etichetta">Clienti soddisfatti</p>
+          </article>
+          <article class="stat-card">
+            <p class="stat-card__numero">80+</p>
+            <p class="stat-card__etichetta">Paesi visitati</p>
+          </article>
+          <article class="stat-card">
+            <p class="stat-card__numero">15</p>
+            <p class="stat-card__etichetta">Anni di esperienza</p>
+          </article>
+          <article class="stat-card">
+            <p class="stat-card__numero">300+</p>
+            <p class="stat-card__etichetta">Pacchetti disponibili</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- PACCHETTI -->
+    <section class="sezione" id="pacchetti" aria-labelledby="titolo-pacchetti">
+      <div class="contenitore">
+
+        <div class="testo-centro">
+          <h2 class="titolo-sezione" id="titolo-pacchetti">I Nostri Pacchetti</h2>
+          <p class="sottotitolo-sezione">Tre categorie pensate per ogni stile di viaggio</p>
+        </div>
+
+        <div class="griglia-pacchetti">
+
+          <!-- Pacchetto Adventure -->
+          <article class="card">
+            <div class="card__immagine-wrap">
+              <img
+                src="images/adventure.jpg"
+                alt="Escursionisti su una montagna"
+                class="card__immagine"
+                loading="lazy"
+                width="600"
+                height="400"
+              />
+              <span class="card__badge card__badge--adventure">Adventure</span>
+            </div>
+            <div class="card__corpo">
+              <h3 class="card__titolo">Spirito Avventuriero</h3>
+              <p class="card__testo">
+                Trekking, safari e arrampicate. Per chi vuole
+                emozioni autentiche e paesaggi indimenticabili.
+              </p>
+              <ul class="lista-spunta">
+                <li>Guide esperte certificate</li>
+                <li>Attrezzatura inclusa</li>
+                <li>Gruppi piccoli (max 12 persone)</li>
+              </ul>
+              <p class="card__prezzo">
+                da €890 <small>/ persona</small>
+              </p>
+              <a href="adventure.html" class="bottone bottone--outline-scuro">
+                Scopri Adventure
+              </a>
+            </div>
+          </article>
+
+          <!-- Pacchetto Comfort -->
+          <article class="card">
+            <div class="card__immagine-wrap">
+              <img
+                src="images/comfort.jpg"
+                alt="Hotel confortevole con vista sul mare"
+                class="card__immagine"
+                loading="lazy"
+                width="600"
+                height="400"
+              />
+              <span class="card__badge card__badge--comfort">Comfort</span>
+            </div>
+            <div class="card__corpo">
+              <h3 class="card__titolo">Relax Senza Pensieri</h3>
+              <p class="card__testo">
+                Hotel 4 stelle, transfer privati e itinerari curati.
+                Viaggia comodamente senza rinunciare all'autenticità.
+              </p>
+              <ul class="lista-spunta">
+                <li>Hotel 4★ selezionati</li>
+                <li>Transfer inclusi</li>
+                <li>Guida locale dedicata</li>
+              </ul>
+              <p class="card__prezzo">
+                da €1.400 <small>/ persona</small>
+              </p>
+              <a href="comfort.html" class="bottone bottone--outline-scuro">
+                Scopri Comfort
+              </a>
+            </div>
+          </article>
+
+          <!-- Pacchetto Luxury -->
+          <article class="card">
+            <div class="card__immagine-wrap">
+              <img
+                src="images/luxury.jpg"
+                alt="Resort di lusso con piscina a sfioro"
+                class="card__immagine"
+                loading="lazy"
+                width="600"
+                height="400"
+              />
+              <span class="card__badge card__badge--luxury">Luxury</span>
+            </div>
+            <div class="card__corpo">
+              <h3 class="card__titolo">L'Eccellenza del Viaggio</h3>
+              <p class="card__testo">
+                Suite esclusive, chef privati e itinerari personalizzati.
+                Il massimo del lusso in ogni dettaglio.
+              </p>
+              <ul class="lista-spunta">
+                <li>Hotel e resort 5★</li>
+                <li>Concierge disponibile 24/7</li>
+                <li>Esperienze esclusive private</li>
+              </ul>
+              <p class="card__prezzo">
+                da €3.200 <small>/ persona</small>
+              </p>
+              <a href="luxury.html" class="bottone bottone--outline-scuro">
+                Scopri Luxury
+              </a>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+
+    <!-- PERCHÉ SCEGLIERCI — layout flexbox -->
+    <section class="sezione sezione--scura" aria-labelledby="titolo-perche">
+      <div class="contenitore">
+        <div class="layout-due-colonne">
+
+          <div class="layout-due-colonne__testo">
+            <h2 class="titolo-sezione" id="titolo-perche">
+              Perché scegliere COREP's Travel?
+            </h2>
+            <p>
+              Dal 2010 organizziamo viaggi su misura per chi vuole
+              vivere esperienze autentiche. Ogni pacchetto è studiato
+              e curato nei minimi dettagli dai nostri esperti.
+            </p>
+            <ul class="lista-spunta" style="margin: 1rem 0;">
+              <li>Assistenza durante tutto il viaggio</li>
+              <li>Prezzi trasparenti, senza costi nascosti</li>
+              <li>Cancellazione gratuita fino a 30 giorni prima</li>
+              <li>Assicurazione viaggio inclusa</li>
+              <li>Consulenza gratuita prima della partenza</li>
+            </ul>
+            <a href="about.html" class="bottone bottone--primario">
+              Scopri la nostra storia
+            </a>
+          </div>
+
+          <div class="layout-due-colonne__immagine">
+            <img
+              src="images/team.jpg"
+              alt="Il team di COREP's Travel"
+              style="width: 100%; border-radius: var(--raggio-lg); object-fit: cover; max-height: 380px;"
+            />
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+
+    <!-- DESTINAZIONI — griglia -->
+    <section class="sezione" aria-labelledby="titolo-destinazioni">
+      <div class="contenitore">
+
+        <div class="testo-centro">
+          <h2 class="titolo-sezione" id="titolo-destinazioni">Destinazioni del Momento</h2>
+          <p class="sottotitolo-sezione">Le mete più richieste dai nostri viaggiatori</p>
+        </div>
+
+        <div class="griglia-galleria">
+
+          <figure style="position: relative; border-radius: var(--raggio-lg); overflow: hidden; height: 220px;">
+            <img
+              src="images/giappone.jpg"
+              alt="Tokyo di notte"
+              style="width: 100%; height: 100%; object-fit: cover;"
+              loading="lazy"
+            />
+            <figcaption style="
+              position: absolute; bottom: 0; left: 0; right: 0;
+              background: linear-gradient(transparent, rgba(0,0,0,0.65));
+              color: white; padding: 1rem;
+              font-family: var(--font-titoli); font-size: var(--fs-medio);
+            ">
+              Giappone
+            </figcaption>
+          </figure>
+
+          <figure style="position: relative; border-radius: var(--raggio-lg); overflow: hidden; height: 220px;">
+            <img
+              src="images/maldive.jpg"
+              alt="Bungalow sulle Maldive"
+              style="width: 100%; height: 100%; object-fit: cover;"
+              loading="lazy"
+            />
+            <figcaption style="
+              position: absolute; bottom: 0; left: 0; right: 0;
+              background: linear-gradient(transparent, rgba(0,0,0,0.65));
+              color: white; padding: 1rem;
+              font-family: var(--font-titoli); font-size: var(--fs-medio);
+            ">
+              Maldive
+            </figcaption>
+          </figure>
+
+          <figure style="position: relative; border-radius: var(--raggio-lg); overflow: hidden; height: 220px;">
+            <img
+              src="images/patagonia.jpg"
+              alt="Torres del Paine in Patagonia"
+              style="width: 100%; height: 100%; object-fit: cover;"
+              loading="lazy"
+            />
+            <figcaption style="
+              position: absolute; bottom: 0; left: 0; right: 0;
+              background: linear-gradient(transparent, rgba(0,0,0,0.65));
+              color: white; padding: 1rem;
+              font-family: var(--font-titoli); font-size: var(--fs-medio);
+            ">
+              Patagonia
+            </figcaption>
+          </figure>
+
+          <figure style="position: relative; border-radius: var(--raggio-lg); overflow: hidden; height: 220px;">
+            <img
+              src="images/marocco.jpg"
+              alt="Medina di Marrakech"
+              style="width: 100%; height: 100%; object-fit: cover;"
+              loading="lazy"
+            />
+            <figcaption style="
+              position: absolute; bottom: 0; left: 0; right: 0;
+              background: linear-gradient(transparent, rgba(0,0,0,0.65));
+              color: white; padding: 1rem;
+              font-family: var(--font-titoli); font-size: var(--fs-medio);
+            ">
+              Marocco
+            </figcaption>
+          </figure>
+
+        </div>
+      </div>
+    </section>
+
+
+    <!-- TABELLA CONFRONTO PACCHETTI -->
+    <section class="sezione" aria-labelledby="titolo-confronto">
+      <div class="contenitore">
+
+        <div class="testo-centro">
+          <h2 class="titolo-sezione" id="titolo-confronto">Confronta i Pacchetti</h2>
+          <p class="sottotitolo-sezione">Cosa è incluso in ogni categoria</p>
+        </div>
+
+        <div class="tabella-wrap">
+          <table class="tabella">
+            <thead>
+              <tr>
+                <th scope="col">Servizio</th>
+                <th scope="col">Adventure</th>
+                <th scope="col">Comfort</th>
+                <th scope="col">Luxury</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Sistemazione</td>
+                <td>Camping / Ostello</td>
+                <td>Hotel 4★</td>
+                <td>Hotel / Resort 5★</td>
+              </tr>
+              <tr>
+                <td>Trasferimenti</td>
+                <td>Mezzi pubblici</td>
+                <td>Transfer privato</td>
+                <td>Auto privata / Elicottero</td>
+              </tr>
+              <tr>
+                <td>Guida</td>
+                <td>Guida di gruppo</td>
+                <td>Guida locale</td>
+                <td>Concierge privato</td>
+              </tr>
+              <tr>
+                <td>Pasti</td>
+                <td>Colazione inclusa</td>
+                <td>Mezza pensione</td>
+                <td>Pensione completa</td>
+              </tr>
+              <tr>
+                <td>Assicurazione</td>
+                <td>Base</td>
+                <td>Standard</td>
+                <td>Premium</td>
+              </tr>
+              <tr>
+                <td>Prezzo indicativo</td>
+                <td>da €890</td>
+                <td>da €1.400</td>
+                <td>da €3.200</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- RECENSIONI -->
+    <section class="sezione" style="background-color: #f0ede6;" aria-labelledby="titolo-recensioni">
+      <div class="contenitore">
+
+        <div class="testo-centro">
+          <h2 class="titolo-sezione" id="titolo-recensioni">Cosa Dicono i Clienti</h2>
+          <p class="sottotitolo-sezione">Recensioni reali di chi ha viaggiato con noi</p>
+        </div>
+
+        <div class="griglia-pacchetti">
+
+          <blockquote class="testimonial">
+            <p class="testimonial__testo">
+              Il trekking in Nepal è stata un'esperienza che mi ha cambiato la vita.
+              Organizzazione impeccabile e guide fantastiche.
+            </p>
+            <footer class="testimonial__autore">— Marco R., Milano</footer>
+          </blockquote>
+
+          <blockquote class="testimonial">
+            <p class="testimonial__testo">
+              Vacanza alle Maldive da sogno. Hotel stupendo, transfer puntuali
+              e assistenza continua. Torneremo sicuramente!
+            </p>
+            <footer class="testimonial__autore">— Giulia e Luca B., Torino</footer>
+          </blockquote>
+
+          <blockquote class="testimonial">
+            <p class="testimonial__testo">
+              Il safari in Kenia ha superato ogni aspettativa.
+              Ogni dettaglio curato alla perfezione.
+            </p>
+            <footer class="testimonial__autore">— Francesca M., Roma</footer>
+          </blockquote>
+
+        </div>
+      </div>
+    </section>
+
+
+    <!-- CALL TO ACTION -->
+    <section class="sezione sezione--scura" aria-label="Chiama all'azione">
+      <div class="contenitore testo-centro">
+        <h2 class="titolo-sezione">Pronto a Partire?</h2>
+        <p style="color: rgba(255,255,255,0.75); max-width: 500px; margin: 0 auto var(--spazio-xl);">
+          Contattaci per una consulenza gratuita e personalizzata.
+          Il viaggio dei tuoi sogni è a un passo.
+        </p>
+        <div style="display: flex; flex-direction: column; gap: var(--spazio-m); align-items: center;">
+          <a href="contatti.html" class="bottone bottone--primario">Richiedi un preventivo</a>
+          <a href="#pacchetti"    class="bottone bottone--outline-chiaro">Guarda i pacchetti</a>
+        </div>
+      </div>
+    </section>
+
+
+  </main>
+
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer" role="contentinfo">
+    <div class="contenitore">
+
+      <div class="footer__griglia">
+
+        <!-- Info agenzia -->
+        <div>
+          <p class="footer__titolo">COREP's Travel</p>
+          <p style="font-size: var(--fs-piccolo); color: rgba(255,255,255,0.55); margin-bottom: var(--spazio-m); max-width: 260px;">
+            Agenzia di viaggi specializzata in esperienze su misura
+            per ogni tipo di viaggiatore dal 2010.
+          </p>
+          <address style="font-style: normal; font-size: var(--fs-piccolo); color: rgba(255,255,255,0.5); line-height: 1.8;">
+            Via delle Alpi 12, 00100 Roma<br />
+            Tel: <a href="tel:+390600000000" class="link" style="color: rgba(255,255,255,0.6);">+39 06 0000000</a><br />
+            Email: <a href="mailto:info@corepstravel.it" class="link" style="color: rgba(255,255,255,0.6);">info@corepstravel.it</a>
+          </address>
+        </div>
+
+        <!-- Pacchetti -->
+        <nav aria-label="Link pacchetti">
+          <p class="footer__titolo">Pacchetti</p>
+          <ul class="footer__lista">
+            <li><a href="adventure.html">Adventure</a></li>
+            <li><a href="comfort.html">Comfort</a></li>
+            <li><a href="luxury.html">Luxury</a></li>
+          </ul>
+        </nav>
+
+        <!-- Agenzia -->
+        <nav aria-label="Link agenzia">
+          <p class="footer__titolo">Agenzia</p>
+          <ul class="footer__lista">
+            <li><a href="about.html">Chi Siamo</a></li>
+            <li><a href="contatti.html">Contatti</a></li>
+            <li><a href="contatti.html">Lavora con noi</a></li>
+          </ul>
+        </nav>
+
+        <!-- Legale -->
+        <nav aria-label="Link legali">
+          <p class="footer__titolo">Legale</p>
+          <ul class="footer__lista">
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">Cookie Policy</a></li>
+            <li><a href="#">Termini e Condizioni</a></li>
+          </ul>
+        </nav>
+
+      </div>
+
+      <div class="footer__basso">
+        <p>&copy; 2025 COREP's Travel — Tutti i diritti riservati</p>
+        <p>P.IVA 01234567890 — REA RM-123456</p>
+      </div>
+
+    </div>
+  </footer>
+
+
+  <!-- Script hamburger menu -->
+  <script>
+    const hamburger = document.getElementById('hamburger');
+    const menu = document.getElementById('menu-principale');
+
+    hamburger.addEventListener('click', function () {
+      const aperto = menu.classList.toggle('aperto');
+      hamburger.classList.toggle('aperto', aperto);
+      hamburger.setAttribute('aria-expanded', aperto);
+    });
+  </script>
+
+</body>
+</html>
