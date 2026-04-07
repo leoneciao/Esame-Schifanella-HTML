@@ -413,6 +413,13 @@ strong {
   gap: var(--spazio-xl);
 }
 
+/* Mobile: una colonna */
+.layout-due-colonne-no-center {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spazio-xl);
+}
+
 /* ---- BARRA STATISTICHE (Flexbox) ---- */
 .barra-stats {
   display: flex;
@@ -964,6 +971,21 @@ strong {
 .link:hover {
   color: var(--colore-accento);
 }
+
+.dettaglio-viaggio__sidebar {
+  position: sticky;
+  top: calc(var(--altezza-nav) + var(--spazio-l));
+  align-self: flex-start;
+}
+
+.box-info {
+  background: var(--colore-bianco);
+  padding: var(--spazio-xl);
+  border-radius: var(--raggio-lg);
+  box-shadow: var(--ombra);
+  border: 1px solid var(--colore-bordo);
+}
+
 /* ================================================
    responsive.css
    COREP's Travel — Media Query
@@ -1062,6 +1084,17 @@ strong {
 
   .layout-due-colonne__immagine {
     flex: 0 0 380px;
+  }
+
+  /* Layout due colonne: affiancato */
+  .layout-due-colonne-no-center {
+    flex-direction: row;
+    align-items: flex-start;
+  }
+
+  .layout-sticky {
+    position: sticky;
+    top: 0;
   }
 }
 
