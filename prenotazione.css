@@ -1,0 +1,248 @@
+/* ================================================
+   prenotazione.css
+   COREP's Travel — Pagina di Prenotazione
+   Mobile First
+   ================================================ */
+
+
+/* ---- LAYOUT PRINCIPALE PAGINA ---- */
+/*
+  Su mobile: form e sidebar impilati in colonna.
+  Su desktop: form a sinistra (2/3) e sidebar a destra (1/3).
+*/
+.prenotazione__layout {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spazio-xl);
+}
+
+.prenotazione__form-wrap {
+  width: 100%;
+}
+
+
+/* ---- FIELDSET ---- */
+/*
+  I <fieldset> raggruppano visivamente le sezioni del form.
+  Usiamo un bordo sottile con colore accento in cima.
+*/
+.form__fieldset {
+  border: 1px solid var(--colore-bordo);
+  border-radius: var(--raggio-lg);
+  padding: var(--spazio-l);
+  margin-bottom: var(--spazio-l);
+  background-color: var(--colore-bianco);
+  box-shadow: var(--ombra);
+}
+
+/* Rimuove lo stile di default del browser per <fieldset> */
+.form__fieldset:last-of-type {
+  margin-bottom: 0;
+}
+
+.form__legend {
+  font-family: var(--font-titoli);
+  font-size: var(--fs-medio);
+  font-weight: 700;
+  color: var(--colore-primario);
+  padding: 0 var(--spazio-s);
+
+  /* Striscia accento a sinistra */
+  border-left: 3px solid var(--colore-accento);
+  padding-left: var(--spazio-m);
+}
+
+
+/* ---- GRIGLIA CHECKBOX ---- */
+/*
+  Su mobile: 1 colonna.
+  Su tablet: 2 colonne affiancate.
+*/
+.form__checkbox-griglia {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--spazio-s);
+  margin-top: var(--spazio-xs);
+}
+
+/* Gruppo radio: colonna singola */
+.form__radio-gruppo {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spazio-s);
+}
+
+/* Label privacy con testo su più righe */
+.form__check--privacy {
+  align-items: flex-start;
+  line-height: 1.5;
+}
+
+.form__check--privacy input {
+  margin-top: 3px; /* allineamento verticale con testo */
+  flex-shrink: 0;
+}
+
+
+/* ---- PULSANTE DI INVIO ---- */
+.prenotazione__submit {
+  text-align: center;
+  margin-top: var(--spazio-l);
+}
+
+.prenotazione__bottone-submit {
+  width: 100%;
+  font-size: var(--fs-medio);
+  padding: 1rem var(--spazio-xl);
+}
+
+.prenotazione__nota-submit {
+  font-size: var(--fs-piccolo);
+  color: var(--colore-testo-chiaro);
+  margin-top: var(--spazio-m);
+  margin-bottom: 0;
+}
+
+
+/* ---- SIDEBAR ---- */
+.prenotazione__sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spazio-l);
+  width: 100%;
+}
+
+/* Card generica della sidebar */
+.sidebar__card {
+  background-color: var(--colore-bianco);
+  border-radius: var(--raggio-lg);
+  border: 1px solid var(--colore-bordo);
+  padding: var(--spazio-l);
+  box-shadow: var(--ombra);
+}
+
+/* Card scura della sidebar (contatti) */
+.sidebar__card--scura {
+  background-color: var(--colore-primario);
+  border-color: var(--colore-primario);
+}
+
+.sidebar__titolo {
+  font-family: var(--font-titoli);
+  font-size: var(--fs-medio);
+  color: var(--colore-primario);
+  margin-bottom: var(--spazio-m);
+
+  /* Decorazione accento sotto il titolo */
+  padding-bottom: var(--spazio-s);
+  border-bottom: 2px solid var(--colore-accento);
+}
+
+/* Titolo chiaro (su sfondo scuro) */
+.sidebar__titolo--chiaro {
+  color: var(--colore-bianco);
+  border-bottom-color: rgba(255, 255, 255, 0.3);
+}
+
+
+/* ---- LISTA PACCHETTI NELLA SIDEBAR ---- */
+.sidebar__lista-pacchetti {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: var(--spazio-m);
+  margin-bottom: var(--spazio-l);
+}
+
+/* Ogni riga: badge + prezzo affiancati */
+.sidebar__pacchetto {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--spazio-s) 0;
+  border-bottom: 1px solid var(--colore-bordo);
+}
+
+/* Pseudo-classe: rimuove il bordo dall'ultimo elemento */
+.sidebar__pacchetto:last-child {
+  border-bottom: none;
+}
+
+.sidebar__prezzo {
+  font-family: var(--font-titoli);
+  font-weight: 700;
+  font-size: var(--fs-base);
+  color: var(--colore-primario);
+}
+
+
+/* ---- LINK DI CONTATTO NELLA SIDEBAR ---- */
+.sidebar__contatto-link {
+  display: block;
+  color: rgba(255, 255, 255, 0.8);
+  font-size: var(--fs-piccolo);
+  padding: var(--spazio-s) 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  transition: color var(--transizione);
+}
+
+/* Pseudo-classe: hover */
+.sidebar__contatto-link:hover {
+  color: var(--colore-accento);
+}
+
+/* Pseudo-classe: ultimo link senza bordo */
+.sidebar__contatto-link:last-child {
+  border-bottom: none;
+}
+
+
+/* ================================================
+   MEDIA QUERY — Tablet (min 768px)
+   ================================================ */
+@media (min-width: 768px) {
+
+  /* Checkbox: 2 colonne affiancate */
+  .form__checkbox-griglia {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* Radio budget: riga orizzontale */
+  .form__radio-gruppo {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: var(--spazio-m);
+  }
+
+  /* Pulsante submit: dimensioni automatiche (non più 100%) */
+  .prenotazione__bottone-submit {
+    width: auto;
+    min-width: 280px;
+  }
+}
+
+
+/* ================================================
+   MEDIA QUERY — Desktop (min 1024px)
+   ================================================ */
+@media (min-width: 1024px) {
+
+  /* Layout principale: form (sinistra) + sidebar (destra) */
+  .prenotazione__layout {
+    flex-direction: row;
+    align-items: flex-start;
+    gap: var(--spazio-xxl);
+  }
+
+  /* Form occupa i 2/3 dello spazio */
+  .prenotazione__form-wrap {
+    flex: 2;
+  }
+
+  /* Sidebar occupa 1/3, rimane fissa mentre si scrolla */
+  .prenotazione__sidebar {
+    flex: 1;
+    position: sticky;
+    top: calc(var(--altezza-nav) + var(--spazio-l));
+  }
+}
