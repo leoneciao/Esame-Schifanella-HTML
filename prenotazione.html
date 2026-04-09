@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="COREP's Travel — Prenota il tuo viaggio su misura." />
+  <title>Prenotazione — COREP's Travel</title>
+
+  <!-- Stesso foglio di stile condiviso del progetto -->
+  <link rel="stylesheet" href="style.css" />
+  <!-- Foglio di stile specifico per questa pagina -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ===== NAVBAR (identica alle altre pagine) ===== -->
+  <header class="navbar" role="banner">
+    <div class="navbar__interno">
+
+      <a href="index.html" class="navbar__logo">
+        COREP'<span>s</span> Travel
+      </a>
+
+      <nav id="menu-principale" class="navbar__menu" role="navigation" aria-label="Navigazione principale">
+        <a href="index.html"        class="navbar__link">Home</a>
+        <a href="adventure.html"    class="navbar__link">Adventure</a>
+        <a href="comfort.html"      class="navbar__link">Comfort</a>
+        <a href="luxury.html"       class="navbar__link">Luxury</a>
+        <a href="about.html"        class="navbar__link">Chi Siamo/Contatti</a>
+        <a href="prenotazione.html" class="navbar__link attivo">Prenota</a>
+      </nav>
+
+      <button
+        class="navbar__hamburger"
+        id="hamburger"
+        aria-label="Apri o chiudi il menu"
+        aria-expanded="false"
+        aria-controls="menu-principale"
+      >
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+    </div>
+  </header>
+
+
+  <!-- ===== CONTENUTO PRINCIPALE ===== -->
+  <main>
+
+    <!-- PAGE HEADER -->
+    <section class="page-header" aria-label="Intestazione pagina prenotazione">
+      <div class="breadcrumb" aria-label="Percorso di navigazione">
+        <a href="index.html">Home</a>
+        <span aria-hidden="true">›</span>
+        <span>Prenota</span>
+      </div>
+      <h1 class="page-header__titolo">Prenota il Tuo Viaggio</h1>
+      <p class="page-header__sottotitolo">
+        Compila il modulo e ti contatteremo entro 24 ore con il tuo preventivo personalizzato.
+      </p>
+    </section>
+
+
+    <!-- SEZIONE FORM + SIDEBAR -->
+    <section class="sezione" aria-labelledby="titolo-form">
+      <div class="contenitore">
+
+        <div class="prenotazione__layout">
+
+          <!-- ===== FORM ===== -->
+          <div class="prenotazione__form-wrap">
+
+            <h2 id="titolo-form" class="titolo-sezione">Richiesta di Prenotazione</h2>
+            <p>Tutti i campi contrassegnati con <strong style="color: var(--colore-accento);">*</strong> sono obbligatori.</p>
+
+            <!--
+              NOTA: action="#" è un segnaposto.
+              In un progetto reale si mette l'URL del server che riceve i dati.
+            -->
+            <form
+              class="form prenotazione__form"
+              id="form-prenotazione"
+              action="#"
+              method="post"
+              novalidate
+              aria-label="Modulo di prenotazione viaggio"
+            >
+
+              <!-- ── 1. DATI PERSONALI ── -->
+              <fieldset class="form__fieldset">
+                <legend class="form__legend">Dati Personali</legend>
+
+                <!-- Nome / Cognome -->
+                <div class="form__riga">
+                  <div class="form__gruppo">
+                    <label class="form__etichetta" for="nome">Nome</label>
+                    <input
+                      class="form__input"
+                      type="text"
+                      id="nome"
+                      name="nome"
+                      placeholder="Es. Marco"
+                      autocomplete="given-name"
+                      required
+                      minlength="2"
+                    />
+                  </div>
+
+                  <div class="form__gruppo">
+                    <label class="form__etichetta" for="cognome">Cognome</label>
+                    <input
+                      class="form__input"
+                      type="text"
+                      id="cognome"
+                      name="cognome"
+                      placeholder="Es. Rossi"
+                      autocomplete="family-name"
+                      required
+                      minlength="2"
+                    />
+                  </div>
+                </div>
+
+                <!-- Email / Telefono -->
+                <div class="form__riga">
+                  <div class="form__gruppo">
+                    <label class="form__etichetta" for="email">Email</label>
+                    <input
+                      class="form__input"
+                      type="email"
+                      id="email"
+                      name="email"
+                      placeholder="Es. marco.rossi@email.it"
+                      autocomplete="email"
+                      required
+                    />
+                  </div>
+
+                  <div class="form__gruppo">
+                    <label class="form__etichetta form__etichetta--opzionale" for="telefono">Telefono</label>
+                    <input
+                      class="form__input"
+                      type="tel"
+                      id="telefono"
+                      name="telefono"
+                      placeholder="Es. +39 333 1234567"
+                      autocomplete="tel"
+                    />
+                  </div>
+                </div>
+
+              </fieldset>
+
+
+              <!-- ── 2. DETTAGLI DEL VIAGGIO ── -->
+              <fieldset class="form__fieldset">
+                <legend class="form__legend">Dettagli del Viaggio</legend>
+
+                <!-- Pacchetto -->
+                <div class="form__gruppo">
+                  <label class="form__etichetta" for="pacchetto">Tipo di pacchetto</label>
+                  <select class="form__select" id="pacchetto" name="pacchetto" required>
+                    <option value="" disabled selected>— Seleziona un pacchetto —</option>
+                    <option value="adventure">🏔️  Adventure — da €890 / persona</option>
+                    <option value="comfort">🏨  Comfort — da €1.400 / persona</option>
+                    <option value="luxury">✨  Luxury — da €3.200 / persona</option>
+                    <option value="personalizzato">🗺️  Pacchetto personalizzato</option>
+                  </select>
+                </div>
+
+                <!-- Destinazione -->
+                <div class="form__gruppo">
+                  <label class="form__etichetta form__etichetta--opzionale" for="destinazione">Destinazione desiderata</label>
+                  <input
+                    class="form__input"
+                    type="text"
+                    id="destinazione"
+                    name="destinazione"
+                    placeholder="Es. Giappone, Maldive, Patagonia…"
+                  />
+                </div>
+
+                <!-- Date -->
+                <div class="form__riga">
+                  <div class="form__gruppo">
+                    <label class="form__etichetta" for="data-partenza">Data di partenza</label>
+                    <input
+                      class="form__input"
+                      type="date"
+                      id="data-partenza"
+                      name="data_partenza"
+                      required
+                    />
+                  </div>
+
+                  <div class="form__gruppo">
+                    <label class="form__etichetta" for="data-ritorno">Data di ritorno</label>
+                    <input
+                      class="form__input"
+                      type="date"
+                      id="data-ritorno"
+                      name="data_ritorno"
+                      required
+                    />
+                  </div>
+                </div>
+
+                <!-- Numero di viaggiatori -->
+                <div class="form__riga">
+                  <div class="form__gruppo">
+                    <label class="form__etichetta" for="adulti">Adulti</label>
+                    <input
+                      class="form__input"
+                      type="number"
+                      id="adulti"
+                      name="adulti"
+                      min="1"
+                      max="20"
+                      value="1"
+                      required
+                    />
+                  </div>
+
+                  <div class="form__gruppo">
+                    <label class="form__etichetta form__etichetta--opzionale" for="bambini">Bambini (0–12 anni)</label>
+                    <input
+                      class="form__input"
+                      type="number"
+                      id="bambini"
+                      name="bambini"
+                      min="0"
+                      max="10"
+                      value="0"
+                    />
+                  </div>
+                </div>
+
+              </fieldset>
+
+
+              <!-- ── 3. PREFERENZE ── -->
+              <fieldset class="form__fieldset">
+                <legend class="form__legend">Preferenze e Servizi Extra</legend>
+
+                <!-- Checkbox servizi aggiuntivi -->
+                <p class="form__etichetta form__etichetta--opzionale" style="margin-bottom: var(--spazio-s);">
+                  Servizi aggiuntivi desiderati
+                </p>
+
+                <div class="form__checkbox-griglia">
+
+                  <label class="form__check">
+                    <input type="checkbox" name="servizi" value="assicurazione" />
+                    Assicurazione viaggio
+                  </label>
+
+                  <label class="form__check">
+                    <input type="checkbox" name="servizi" value="transfer" />
+                    Transfer aeroporto
+                  </label>
+
+                  <label class="form__check">
+                    <input type="checkbox" name="servizi" value="guida" />
+                    Guida privata
+                  </label>
+
+                  <label class="form__check">
+                    <input type="checkbox" name="servizi" value="mezza-pensione" />
+                    Mezza pensione
+                  </label>
+
+                  <label class="form__check">
+                    <input type="checkbox" name="servizi" value="pensione-completa" />
+                    Pensione completa
+                  </label>
+
+                  <label class="form__check">
+                    <input type="checkbox" name="servizi" value="esperienze" />
+                    Esperienze locali
+                  </label>
+
+                </div>
+
+                <!-- Budget indicativo (radio) -->
+                <p class="form__etichetta" style="margin-top: var(--spazio-l); margin-bottom: var(--spazio-s);">
+                  Budget indicativo per persona
+                </p>
+
+                <div class="form__radio-gruppo" role="radiogroup" aria-label="Budget per persona">
+
+                  <label class="form__check">
+                    <input type="radio" name="budget" value="sotto-1000" required />
+                    Fino a €1.000
+                  </label>
+
+                  <label class="form__check">
+                    <input type="radio" name="budget" value="1000-2000" />
+                    €1.000 – €2.000
+                  </label>
+
+                  <label class="form__check">
+                    <input type="radio" name="budget" value="2000-3500" />
+                    €2.000 – €3.500
+                  </label>
+
+                  <label class="form__check">
+                    <input type="radio" name="budget" value="oltre-3500" />
+                    Oltre €3.500
+                  </label>
+
+                </div>
+
+              </fieldset>
+
+
+              <!-- ── 4. MESSAGGIO ── -->
+              <fieldset class="form__fieldset">
+                <legend class="form__legend">Note e Richieste Speciali</legend>
+
+                <div class="form__gruppo">
+                  <label class="form__etichetta form__etichetta--opzionale" for="messaggio">
+                    Messaggio
+                  </label>
+                  <textarea
+                    class="form__textarea"
+                    id="messaggio"
+                    name="messaggio"
+                    placeholder="Raccontaci le tue aspettative, esigenze particolari, allergie alimentari, accessibilità…"
+                    rows="5"
+                  ></textarea>
+                </div>
+
+                <!-- Come ci hai conosciuto -->
+                <div class="form__gruppo">
+                  <label class="form__etichetta form__etichetta--opzionale" for="fonte">Come ci hai conosciuto?</label>
+                  <select class="form__select" id="fonte" name="fonte">
+                    <option value="" disabled selected>— Seleziona —</option>
+                    <option value="google">Ricerca Google</option>
+                    <option value="social">Social media</option>
+                    <option value="passaparola">Passaparola</option>
+                    <option value="fiera">Fiera del turismo</option>
+                    <option value="altro">Altro</option>
+                  </select>
+                </div>
+
+                <!-- Privacy -->
+                <div class="form__gruppo">
+                  <label class="form__check form__check--privacy">
+                    <input
+                      type="checkbox"
+                      name="privacy"
+                      id="privacy"
+                      required
+                    />
+                    Ho letto e accetto la
+                    <a href="#" class="link">Privacy Policy</a>
+                    e i
+                    <a href="#" class="link">Termini e Condizioni</a>. *
+                  </label>
+                </div>
+
+              </fieldset>
+
+
+              <!-- ── SUBMIT ── -->
+              <div class="prenotazione__submit">
+                <button type="submit" class="bottone bottone--primario prenotazione__bottone-submit">
+                  Invia Richiesta di Prenotazione
+                </button>
+                <p class="prenotazione__nota-submit">
+                  Riceverai una conferma via email entro 24 ore. Nessun pagamento richiesto in questa fase.
+                </p>
+              </div>
+
+            </form>
+
+          </div><!-- /prenotazione__form-wrap -->
+
+
+          <!-- ===== SIDEBAR INFO ===== -->
+          <aside class="prenotazione__sidebar" aria-label="Informazioni utili">
+
+            <!-- Riepilogo pacchetti -->
+            <div class="sidebar__card">
+              <h3 class="sidebar__titolo">I Nostri Pacchetti</h3>
+              <ul class="sidebar__lista-pacchetti">
+
+                <li class="sidebar__pacchetto">
+                  <span class="badge badge--adventure">Adventure</span>
+                  <span class="sidebar__prezzo">da €890</span>
+                </li>
+
+                <li class="sidebar__pacchetto">
+                  <span class="badge badge--comfort">Comfort</span>
+                  <span class="sidebar__prezzo">da €1.400</span>
+                </li>
+
+                <li class="sidebar__pacchetto">
+                  <span class="badge badge--luxury">Luxury</span>
+                  <span class="sidebar__prezzo">da €3.200</span>
+                </li>
+
+              </ul>
+              <a href="index.html#pacchetti" class="bottone bottone--outline-scuro" style="width: 100%; text-align: center;">
+                Confronta i pacchetti
+              </a>
+            </div>
+
+            <!-- Perché sceglierci -->
+            <div class="sidebar__card">
+              <h3 class="sidebar__titolo">Perché Sceglierci</h3>
+              <ul class="lista-spunta">
+                <li>Consulenza gratuita personalizzata</li>
+                <li>Nessun pagamento anticipato</li>
+                <li>Cancellazione gratuita entro 30 giorni</li>
+                <li>Assistenza durante tutto il viaggio</li>
+                <li>Assicurazione inclusa</li>
+              </ul>
+            </div>
+
+            <!-- Contatti rapidi -->
+            <div class="sidebar__card sidebar__card--scura">
+              <h3 class="sidebar__titolo sidebar__titolo--chiaro">Hai domande?</h3>
+              <p style="color: rgba(255,255,255,0.75); font-size: var(--fs-piccolo); margin-bottom: var(--spazio-m);">
+                Il nostro team è disponibile dal lunedì al venerdì, 9:00–18:00.
+              </p>
+              <address style="font-style: normal;">
+                <a href="tel:+390600000000" class="sidebar__contatto-link">
+                  📞 +39 06 0000000
+                </a>
+                <a href="mailto:info@corepstravel.it" class="sidebar__contatto-link">
+                  ✉️ info@corepstravel.it
+                </a>
+                <a href="contatti.html" class="sidebar__contatto-link">
+                  💬 Vai alla pagina Contatti
+                </a>
+              </address>
+            </div>
+
+          </aside><!-- /prenotazione__sidebar -->
+
+        </div><!-- /prenotazione__layout -->
+
+      </div><!-- /contenitore -->
+    </section>
+
+
+    <!-- CALL TO ACTION finale -->
+    <section class="sezione sezione--scura" aria-label="Messaggio conclusivo">
+      <div class="contenitore testo-centro">
+        <h2 class="titolo-sezione">Ogni viaggio inizia con un sogno.</h2>
+        <p style="color: rgba(255,255,255,0.75); max-width: 520px; margin: 0 auto var(--spazio-xl);">
+          Noi siamo qui per trasformarlo in realtà. Compila il modulo
+          e lascia fare a noi il resto.
+        </p>
+        <a href="#form-prenotazione" class="bottone bottone--primario">Torna al form</a>
+      </div>
+    </section>
+
+  </main>
+
+
+  <!-- ===== FOOTER (identico alle altre pagine) ===== -->
+  <footer class="footer" role="contentinfo">
+    <div class="contenitore">
+
+      <div class="footer__griglia">
+
+        <div>
+          <p class="footer__titolo">COREP's Travel</p>
+          <p style="font-size: var(--fs-piccolo); color: rgba(255,255,255,0.55); margin-bottom: var(--spazio-m); max-width: 260px;">
+            Agenzia di viaggi specializzata in esperienze su misura
+            per ogni tipo di viaggiatore dal 2010.
+          </p>
+          <address style="font-style: normal; font-size: var(--fs-piccolo); color: rgba(255,255,255,0.5); line-height: 1.8;">
+            Via delle Alpi 12, 00100 Roma<br />
+            Tel: <a href="tel:+390600000000" class="link" style="color: rgba(255,255,255,0.6);">+39 06 0000000</a><br />
+            Email: <a href="mailto:info@corepstravel.it" class="link" style="color: rgba(255,255,255,0.6);">info@corepstravel.it</a>
+          </address>
+        </div>
+
+        <nav aria-label="Link pacchetti">
+          <p class="footer__titolo">Pacchetti</p>
+          <ul class="footer__lista">
+            <li><a href="adventure.html">Adventure</a></li>
+            <li><a href="comfort.html">Comfort</a></li>
+            <li><a href="luxury.html">Luxury</a></li>
+          </ul>
+        </nav>
+
+        <nav aria-label="Link agenzia">
+          <p class="footer__titolo">Agenzia</p>
+          <ul class="footer__lista">
+            <li><a href="about.html">Chi Siamo</a></li>
+            <li><a href="contatti.html">Contatti</a></li>
+            <li><a href="prenotazione.html">Prenota</a></li>
+          </ul>
+        </nav>
+
+        <nav aria-label="Link legali">
+          <p class="footer__titolo">Legale</p>
+          <ul class="footer__lista">
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">Cookie Policy</a></li>
+            <li><a href="#">Termini e Condizioni</a></li>
+          </ul>
+        </nav>
+
+      </div>
+
+      <div class="footer__basso">
+        <p>&copy; 2025 COREP's Travel — Tutti i diritti riservati</p>
+        <p>P.IVA 01234567890 — REA RM-123456</p>
+      </div>
+
+    </div>
+  </footer>
+
+
+  <!-- Script hamburger (identico alle altre pagine) -->
+  <script>
+    const hamburger = document.getElementById('hamburger');
+    const menu      = document.getElementById('menu-principale');
+
+    hamburger.addEventListener('click', function () {
+      const aperto = menu.classList.toggle('aperto');
+      hamburger.classList.toggle('aperto', aperto);
+      hamburger.setAttribute('aria-expanded', aperto);
+    });
+
+    /* Validazione minima lato client: data ritorno >= data partenza */
+    const inputPartenza = document.getElementById('data-partenza');
+    const inputRitorno  = document.getElementById('data-ritorno');
+
+    inputPartenza.addEventListener('change', function () {
+      inputRitorno.min = this.value;
+      if (inputRitorno.value && inputRitorno.value < this.value) {
+        inputRitorno.value = this.value;
+      }
+    });
+
+    /* Feedback invio form */
+    const formEl = document.getElementById('form-prenotazione');
+    formEl.addEventListener('submit', function (e) {
+      e.preventDefault();
+      if (!formEl.checkValidity()) {
+        formEl.reportValidity();
+        return;
+      }
+      alert('Grazie! La tua richiesta è stata inviata. Ti contatteremo entro 24 ore.');
+      formEl.reset();
+    });
+  </script>
+
+</body>
+</html>
