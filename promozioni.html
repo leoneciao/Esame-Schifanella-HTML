@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="COREP's Travel — Offerte e promozioni sui viaggi." />
+  <title>Promozioni — COREP's Travel</title>
+
+  <!-- Foglio di stile condiviso del progetto -->
+  <link rel="stylesheet" href="style.css" />
+  <!-- Foglio di stile specifico per questa pagina -->
+  <link rel="stylesheet" href="promozioni.css" />
+</head>
+<body>
+
+  <!-- ===== NAVBAR ===== -->
+  <header class="navbar" role="banner">
+    <div class="navbar__interno">
+
+      <a href="index.html" class="navbar__logo">
+        COREP'<span>s</span> Travel
+      </a>
+
+      <nav id="menu-principale" class="navbar__menu" role="navigation" aria-label="Navigazione principale">
+        <a href="index.html"        class="navbar__link">Home</a>
+        <a href="adventure.html"    class="navbar__link">Adventure</a>
+        <a href="comfort.html"      class="navbar__link">Comfort</a>
+        <a href="luxury.html"       class="navbar__link">Luxury</a>
+        <a href="about.html"        class="navbar__link">Chi Siamo</a>
+        <a href="contatti.html"     class="navbar__link">Contatti</a>
+        <a href="prenotazione.html" class="navbar__link">Prenota</a>
+      </nav>
+
+      <button
+        class="navbar__hamburger"
+        id="hamburger"
+        aria-label="Apri o chiudi il menu"
+        aria-expanded="false"
+        aria-controls="menu-principale"
+      >
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+    </div>
+  </header>
+
+
+  <!-- ===== CONTENUTO PRINCIPALE ===== -->
+  <main>
+
+    <!-- PAGE HEADER -->
+    <section class="page-header" aria-label="Intestazione pagina promozioni">
+      <div class="breadcrumb" aria-label="Percorso di navigazione">
+        <a href="index.html">Home</a>
+        <span aria-hidden="true">›</span>
+        <span>Promozioni</span>
+      </div>
+      <h1 class="page-header__titolo">Offerte Speciali</h1>
+      <p class="page-header__sottotitolo">
+        Destinazioni straordinarie a prezzi eccezionali. Le promozioni sono valide fino a esaurimento posti.
+      </p>
+    </section>
+
+
+    <!-- BANNER COUNTDOWN -->
+    <div class="promo__banner" role="alert" aria-label="Scadenza offerte">
+      <span class="promo__banner-testo">
+        ⏳ Offerte in scadenza —
+        <strong>prenota entro il 30 giugno 2025</strong>
+        per garantirti il prezzo scontato.
+      </span>
+    </div>
+
+
+    <!-- SEZIONE PROMOZIONI -->
+    <section class="sezione" aria-labelledby="titolo-promozioni">
+      <div class="contenitore">
+
+        <h2 id="titolo-promozioni" class="titolo-sezione testo-centro">
+          Le Nostre Offerte del Mese
+        </h2>
+        <p class="promo__intro testo-centro">
+          Abbiamo selezionato 4 destinazioni con sconti esclusivi per chi prenota in anticipo.
+        </p>
+
+        <!-- GRIGLIA CARD PROMOZIONI -->
+        <div class="promo__griglia">
+
+
+          <!-- ── CARD 1: Giappone ── -->
+          <article class="promo-card" aria-label="Promozione Giappone">
+
+            <!-- Etichetta sconto -->
+            <div class="promo-card__sconto" aria-label="Sconto del 25%">–25%</div>
+
+            <!-- Intestazione colorata -->
+            <div class="promo-card__header promo-card__header--giappone">
+              <span class="promo-card__emoji" aria-hidden="true">🗾</span>
+              <h3 class="promo-card__destinazione">Giappone</h3>
+              <p class="promo-card__sottotitolo">Tokyo · Kyoto · Osaka</p>
+            </div>
+
+            <!-- Corpo card -->
+            <div class="promo-card__corpo">
+
+              <!-- Prezzi -->
+              <div class="promo-card__prezzi">
+                <span class="promo-card__prezzo-vecchio">€2.400</span>
+                <span class="promo-card__prezzo-nuovo">€1.800</span>
+                <span class="promo-card__per-persona">a persona</span>
+              </div>
+
+              <!-- Dettagli viaggio -->
+              <ul class="promo-card__dettagli" aria-label="Dettagli del viaggio">
+                <li>📅 Partenza: 15 settembre 2025</li>
+                <li>⏱ Durata: 14 giorni</li>
+                <li>👥 Posti rimasti: <strong>4</strong></li>
+                <li>🏨 Pacchetto: Luxury</li>
+              </ul>
+
+              <!-- Cosa è incluso -->
+              <ul class="lista-spunta" aria-label="Cosa è incluso">
+                <li>Voli andata e ritorno inclusi</li>
+                <li>Hotel 4 stelle in posizione centrale</li>
+                <li>Guida privata in italiano</li>
+                <li>Cerimonia del tè tradizionale</li>
+              </ul>
+
+              <a href="prenotazione.html" class="bottone bottone--primario promo-card__bottone">
+                Prenota questa offerta
+              </a>
+
+            </div>
+          </article>
+
+
+          <!-- ── CARD 2: Maldive ── -->
+          <article class="promo-card" aria-label="Promozione Maldive">
+
+            <!-- Etichetta sconto + "più popolare" -->
+            <div class="promo-card__sconto promo-card__sconto--popolare" aria-label="Sconto del 30%, offerta più popolare">
+              –30% ⭐ Più popolare
+            </div>
+
+            <div class="promo-card__header promo-card__header--maldive">
+              <span class="promo-card__emoji" aria-hidden="true">🏝️</span>
+              <h3 class="promo-card__destinazione">Maldive</h3>
+              <p class="promo-card__sottotitolo">Atollo di Malé Nord</p>
+            </div>
+
+            <div class="promo-card__corpo">
+
+              <div class="promo-card__prezzi">
+                <span class="promo-card__prezzo-vecchio">€3.200</span>
+                <span class="promo-card__prezzo-nuovo">€2.240</span>
+                <span class="promo-card__per-persona">a persona</span>
+              </div>
+
+              <ul class="promo-card__dettagli" aria-label="Dettagli del viaggio">
+                <li>📅 Partenza: 5 luglio 2025</li>
+                <li>⏱ Durata: 10 giorni</li>
+                <li>👥 Posti rimasti: <strong>6</strong></li>
+                <li>🏨 Pacchetto: Luxury</li>
+              </ul>
+
+              <ul class="lista-spunta" aria-label="Cosa è incluso">
+                <li>Voli internazionali inclusi</li>
+                <li>Villa overwater con piscina privata</li>
+                <li>Pensione completa</li>
+                <li>Snorkeling e immersioni guidate</li>
+              </ul>
+
+              <a href="prenotazione.html" class="bottone bottone--primario promo-card__bottone">
+                Prenota questa offerta
+              </a>
+
+            </div>
+          </article>
+
+
+          <!-- ── CARD 3: Marocco ── -->
+          <article class="promo-card" aria-label="Promozione Marocco">
+
+            <div class="promo-card__sconto" aria-label="Sconto del 20%">–20%</div>
+
+            <div class="promo-card__header promo-card__header--marocco">
+              <span class="promo-card__emoji" aria-hidden="true">🕌</span>
+              <h3 class="promo-card__destinazione">Marocco</h3>
+              <p class="promo-card__sottotitolo">Marrakech · Sahara · Fes</p>
+            </div>
+
+            <div class="promo-card__corpo">
+
+              <div class="promo-card__prezzi">
+                <span class="promo-card__prezzo-vecchio">€1.100</span>
+                <span class="promo-card__prezzo-nuovo">€880</span>
+                <span class="promo-card__per-persona">a persona</span>
+              </div>
+
+              <ul class="promo-card__dettagli" aria-label="Dettagli del viaggio">
+                <li>📅 Partenza: 20 ottobre 2025</li>
+                <li>⏱ Durata: 10 giorni</li>
+                <li>👥 Posti rimasti: <strong>8</strong></li>
+                <li>🏕️ Pacchetto: Adventure</li>
+              </ul>
+
+              <ul class="lista-spunta" aria-label="Cosa è incluso">
+                <li>Voli inclusi da Roma</li>
+                <li>Riad tradizionale con colazione</li>
+                <li>Notte nel deserto in tenda berbera</li>
+                <li>Escursione in cammello al tramonto</li>
+              </ul>
+
+              <a href="prenotazione.html" class="bottone bottone--primario promo-card__bottone">
+                Prenota questa offerta
+              </a>
+
+            </div>
+          </article>
+
+
+          <!-- ── CARD 4: Norvegia ── -->
+          <article class="promo-card" aria-label="Promozione Norvegia">
+
+            <div class="promo-card__sconto" aria-label="Sconto del 15%">–15%</div>
+
+            <div class="promo-card__header promo-card__header--norvegia">
+              <span class="promo-card__emoji" aria-hidden="true">🌌</span>
+              <h3 class="promo-card__destinazione">Norvegia</h3>
+              <p class="promo-card__sottotitolo">Fiordi · Tromsø · Lofoten</p>
+            </div>
+
+            <div class="promo-card__corpo">
+
+              <div class="promo-card__prezzi">
+                <span class="promo-card__prezzo-vecchio">€1.800</span>
+                <span class="promo-card__prezzo-nuovo">€1.530</span>
+                <span class="promo-card__per-persona">a persona</span>
+              </div>
+
+              <ul class="promo-card__dettagli" aria-label="Dettagli del viaggio">
+                <li>📅 Partenza: 10 gennaio 2026</li>
+                <li>⏱ Durata: 8 giorni</li>
+                <li>👥 Posti rimasti: <strong>10</strong></li>
+                <li>🏨 Pacchetto: Comfort</li>
+              </ul>
+
+              <ul class="lista-spunta" aria-label="Cosa è incluso">
+                <li>Voli inclusi da Milano</li>
+                <li>Hotel di design con vista fiordo</li>
+                <li>Tour aurora boreale notturno</li>
+                <li>Crociera nei fiordi inclusa</li>
+              </ul>
+
+              <a href="prenotazione.html" class="bottone bottone--primario promo-card__bottone">
+                Prenota questa offerta
+              </a>
+
+            </div>
+          </article>
+
+
+        </div><!-- /promo__griglia -->
+
+
+        <!-- NOTA LEGALE -->
+        <p class="promo__nota">
+          * I prezzi indicati sono per persona, in camera doppia, e includono le tasse aeroportuali.
+          Le promozioni sono valide salvo esaurimento posti e possono essere revocate senza preavviso.
+          Per ulteriori informazioni contatta il nostro team su
+          <a href="mailto:info@corepstravel.it" class="link">info@corepstravel.it</a>.
+        </p>
+
+      </div>
+    </section>
+
+
+    <!-- CTA FINALE -->
+    <section class="sezione sezione--scura" aria-label="Call to action finale">
+      <div class="contenitore testo-centro">
+        <h2 class="titolo-sezione">Non trovi la destinazione che cerchi?</h2>
+        <p style="color: rgba(255,255,255,0.75); max-width: 520px; margin: 0 auto var(--spazio-xl);">
+          Costruiamo insieme il viaggio su misura per te. Compila il modulo e ti invieremo un preventivo gratuito entro 24 ore.
+        </p>
+        <a href="prenotazione.html" class="bottone bottone--primario">Richiedi un Preventivo</a>
+      </div>
+    </section>
+
+  </main>
+
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer" role="contentinfo">
+    <div class="contenitore">
+
+      <div class="footer__griglia">
+
+        <div>
+          <p class="footer__titolo">COREP's Travel</p>
+          <p style="font-size: var(--fs-piccolo); color: rgba(255,255,255,0.55); margin-bottom: var(--spazio-m); max-width: 260px;">
+            Agenzia di viaggi specializzata in esperienze su misura
+            per ogni tipo di viaggiatore dal 2010.
+          </p>
+          <address style="font-style: normal; font-size: var(--fs-piccolo); color: rgba(255,255,255,0.5); line-height: 1.8;">
+            Via delle Alpi 12, 00100 Roma<br />
+            Tel: <a href="tel:+390600000000" class="link" style="color: rgba(255,255,255,0.6);">+39 06 0000000</a><br />
+            Email: <a href="mailto:info@corepstravel.it" class="link" style="color: rgba(255,255,255,0.6);">info@corepstravel.it</a>
+          </address>
+        </div>
+
+        <nav aria-label="Link pacchetti">
+          <p class="footer__titolo">Pacchetti</p>
+          <ul class="footer__lista">
+            <li><a href="adventure.html">Adventure</a></li>
+            <li><a href="comfort.html">Comfort</a></li>
+            <li><a href="luxury.html">Luxury</a></li>
+          </ul>
+        </nav>
+
+        <nav aria-label="Link agenzia">
+          <p class="footer__titolo">Agenzia</p>
+          <ul class="footer__lista">
+            <li><a href="about.html">Chi Siamo</a></li>
+            <li><a href="contatti.html">Contatti</a></li>
+            <li><a href="prenotazione.html">Prenota</a></li>
+          </ul>
+        </nav>
+
+        <nav aria-label="Link legali">
+          <p class="footer__titolo">Legale</p>
+          <ul class="footer__lista">
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">Cookie Policy</a></li>
+            <li><a href="#">Termini e Condizioni</a></li>
+          </ul>
+        </nav>
+
+      </div>
+
+      <div class="footer__basso">
+        <p>&copy; 2025 COREP's Travel — Tutti i diritti riservati</p>
+        <p>P.IVA 01234567890 — REA RM-123456</p>
+      </div>
+
+    </div>
+  </footer>
+
+
+  <!-- Script hamburger -->
+  <script>
+    const hamburger = document.getElementById('hamburger');
+    const menu      = document.getElementById('menu-principale');
+
+    hamburger.addEventListener('click', function () {
+      const aperto = menu.classList.toggle('aperto');
+      hamburger.classList.toggle('aperto', aperto);
+      hamburger.setAttribute('aria-expanded', aperto);
+    });
+  </script>
+
+</body>
+</html>
