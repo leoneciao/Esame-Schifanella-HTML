@@ -1,42 +1,39 @@
 /* ================================================
-   promozioni.css
+   promozi.css
    COREP's Travel — Pagina Promozioni
-   Mobile First
+   Dipende da style.css (variabili, reset, utility,
+   navbar, footer, bottoni già definiti lì).
    ================================================ */
 
 
-/* ---- BANNER COUNTDOWN ---- */
-/*
-  Striscia colorata sotto il page-header
-  che attira l'attenzione sulla scadenza delle offerte.
-*/
-.promo__banner {
+/* ================================================
+   BANNER SCADENZA
+   ================================================ */
+
+.banner-scadenza {
   background-color: var(--colore-accento);
   color: var(--colore-bianco);
   text-align: center;
   padding: var(--spazio-m) var(--spazio-l);
 }
 
-.promo__banner-testo {
+.banner-testo {
   font-size: var(--fs-piccolo);
   letter-spacing: 0.02em;
 }
 
 
-/* ---- INTRO TESTO ---- */
-.promo__intro {
+/* ================================================
+   INTRO E GRIGLIA
+   ================================================ */
+
+.promo-intro {
   color: var(--colore-testo-chiaro);
   max-width: 540px;
   margin: 0 auto var(--spazio-xl);
 }
 
-
-/* ---- GRIGLIA PROMOZIONI ---- */
-/*
-  Su mobile: 1 colonna (card impilate).
-  Su desktop: 2 colonne affiancate.
-*/
-.promo__griglia {
+.promo-griglia {
   display: grid;
   grid-template-columns: 1fr;
   gap: var(--spazio-xl);
@@ -45,88 +42,69 @@
 
 /* ================================================
    CARD PROMOZIONE
-   Struttura:
-     .promo-card
-       .promo-card__sconto       ← badge con percentuale
-       .promo-card__header       ← area colorata con nome destinazione
-       .promo-card__corpo        ← prezzi, dettagli, bottone
    ================================================ */
 
 .promo-card {
-  position: relative;           /* serve per posizionare il badge sconto */
+  position: relative;
   background-color: var(--colore-bianco);
   border: 1px solid var(--colore-bordo);
   border-radius: var(--raggio-lg);
   box-shadow: var(--ombra);
-  overflow: hidden;             /* i bordi arrotondati tagliano anche l'header */
-
-  /* Le card crescono tutte alla stessa altezza nella griglia */
+  overflow: hidden;
   display: flex;
   flex-direction: column;
+  transition: transform var(--transizione), box-shadow var(--transizione);
+}
+
+.promo-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
 }
 
 
 /* ---- BADGE SCONTO ---- */
-/*
-  Etichetta rossa in alto a destra della card.
-  position: absolute la "stacca" dal flusso normale
-  e la posiziona rispetto al genitore (.promo-card).
-*/
-.promo-card__sconto {
+
+.card-sconto {
   position: absolute;
   top: var(--spazio-m);
   right: var(--spazio-m);
-  background-color: #c0392b;   /* rosso sconto */
+  background-color: #c0392b;
   color: var(--colore-bianco);
   font-size: 13px;
   font-weight: 700;
   padding: 5px 12px;
-  border-radius: 999px;        /* pillola arrotondata */
+  border-radius: 999px;
   z-index: 1;
   letter-spacing: 0.03em;
 }
 
-/* Variante per l'offerta "più popolare" */
-.promo-card__sconto--popolare {
-  background-color: #e67e22;   /* arancione per distinguerla */
+.card-sconto-popolare {
+  background-color: #e67e22;
   font-size: 11px;
 }
 
 
-/* ---- HEADER COLORATO ---- */
-/*
-  Ogni destinazione ha un colore diverso.
-  Contiene l'emoji, il nome e il sottotitolo della meta.
-*/
-.promo-card__header {
+/* ---- HEADER CARD ---- */
+
+.card-header {
   padding: var(--spazio-xl) var(--spazio-l) var(--spazio-l);
   text-align: center;
   color: var(--colore-bianco);
 }
 
-/* Colori specifici per destinazione */
-.promo-card__header--giappone {
-  background: linear-gradient(135deg, #c0392b, #e74c3c);
-}
-.promo-card__header--maldive {
-  background: linear-gradient(135deg, #0e7490, #06b6d4);
-}
-.promo-card__header--marocco {
-  background: linear-gradient(135deg, #92400e, #d97706);
-}
-.promo-card__header--norvegia {
-  background: linear-gradient(135deg, #1e3a5f, #2980b9);
-}
+.card-header-giappone { background: linear-gradient(135deg, #c0392b, #e74c3c); }
+.card-header-maldive  { background: linear-gradient(135deg, #0e7490, #06b6d4); }
+.card-header-marocco  { background: linear-gradient(135deg, #92400e, #d97706); }
+.card-header-norvegia { background: linear-gradient(135deg, #1e3a5f, #2980b9); }
 
-/* Emoji grande come icona decorativa */
-.promo-card__emoji {
+.card-emoji {
   display: block;
   font-size: 3rem;
   margin-bottom: var(--spazio-s);
   line-height: 1;
 }
 
-.promo-card__destinazione {
+.card-destinazione {
   font-family: var(--font-titoli);
   font-size: 1.8rem;
   font-weight: 800;
@@ -135,7 +113,7 @@
   line-height: 1.1;
 }
 
-.promo-card__sottotitolo {
+.card-sottotitolo {
   font-size: var(--fs-piccolo);
   color: rgba(255, 255, 255, 0.8);
   margin: 0;
@@ -143,115 +121,149 @@
 
 
 /* ---- CORPO CARD ---- */
-.promo-card__corpo {
+
+.card-corpo {
   padding: var(--spazio-l);
   display: flex;
   flex-direction: column;
-  flex: 1;                      /* il corpo occupa tutto lo spazio rimanente */
+  flex: 1;
   gap: var(--spazio-l);
 }
 
 
 /* ---- PREZZI ---- */
-/*
-  Mostra il prezzo originale barrato e quello scontato.
-*/
-.promo-card__prezzi {
+
+.card-prezzi {
   display: flex;
   align-items: baseline;
   gap: var(--spazio-m);
   flex-wrap: wrap;
 }
 
-/* Prezzo originale: grigio e barrato */
-.promo-card__prezzo-vecchio {
+.prezzo-vecchio {
   font-size: var(--fs-medio);
   color: var(--colore-testo-chiaro);
-  text-decoration: line-through; /* la barratura indica il vecchio prezzo */
+  text-decoration: line-through;
 }
 
-/* Prezzo nuovo: grande e colorato */
-.promo-card__prezzo-nuovo {
+.prezzo-nuovo {
   font-family: var(--font-titoli);
   font-size: 2rem;
   font-weight: 800;
   color: var(--colore-primario);
 }
 
-/* Indicazione "a persona" */
-.promo-card__per-persona {
+.per-persona {
   font-size: var(--fs-piccolo);
   color: var(--colore-testo-chiaro);
 }
 
 
 /* ---- DETTAGLI VIAGGIO ---- */
-/*
-  Lista semplice con le info principali del viaggio
-  (data, durata, posti, tipo pacchetto).
-*/
-.promo-card__dettagli {
+
+.card-dettagli {
   list-style: none;
   display: flex;
   flex-direction: column;
   gap: var(--spazio-xs);
   background-color: var(--colore-sfondo);
-  border-radius: var(--raggio-md);
+  border-radius: var(--raggio);
   padding: var(--spazio-m);
   border: 1px solid var(--colore-bordo);
 }
 
-.promo-card__dettagli li {
+.card-dettagli li {
   font-size: var(--fs-piccolo);
   color: var(--colore-testo);
+  padding-left: var(--spazio-m);
+  position: relative;
 }
 
-/* I posti rimasti in grassetto risaltano */
-.promo-card__dettagli strong {
+/* ::before — aggiunge il simbolo prima del testo */
+.card-dettagli li::before {
+  content: "›";
+  position: absolute;
+  left: 0;
+  color: var(--colore-accento);
+  font-weight: 700;
+}
+
+.card-dettagli strong {
   color: var(--colore-accento);
 }
 
 
-/* ---- LISTA INCLUSO (riusa .lista-spunta da style.css) ---- */
-/*
-  .lista-spunta è già definita nel foglio condiviso:
-  mostra una spunta verde prima di ogni elemento.
-  Qui lo usiamo senza modifiche.
-*/
+/* ---- LISTA CON SPUNTA ---- */
+
+.lista-spunta {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: var(--spazio-s);
+  margin-bottom: var(--spazio-m);
+}
+
+.lista-spunta li {
+  font-size: var(--fs-base);
+  color: var(--colore-testo-chiaro);
+  padding-left: 1.5rem;
+  position: relative;
+}
+
+/* ::before — aggiunge la spunta */
+.lista-spunta li::before {
+  content: '✓';
+  position: absolute;
+  left: 0;
+  color: var(--colore-accento);
+  font-weight: 700;
+}
 
 
 /* ---- BOTTONE PRENOTA ---- */
-/*
-  Il bottone è in fondo alla card e occupa tutta la larghezza.
-  margin-top: auto lo "spinge" verso il basso anche se il
-  contenuto sopra è più corto.
-*/
-.promo-card__bottone {
+
+.card-bottone {
   width: 100%;
   text-align: center;
   margin-top: auto;
 }
 
+.card-bottone:focus {
+  outline: 3px solid var(--colore-accento);
+  outline-offset: 3px;
+}
 
-/* ---- NOTA LEGALE ---- */
-.promo__nota {
-  margin-top: var(--spazio-xxl);
+
+/* ================================================
+   NOTA PREZZI
+   ================================================ */
+
+.promo-nota {
   font-size: 12px;
   color: var(--colore-testo-chiaro);
   line-height: 1.6;
-  border-top: 1px solid var(--colore-bordo);
-  padding-top: var(--spazio-l);
+  margin-top: var(--spazio-m);
+  margin-bottom: 0;
+}
+
+
+/* ================================================
+   CTA FINALE
+   ================================================ */
+
+.cta-testo {
+  color: rgba(255, 255, 255, 0.75);
+  max-width: 520px;
+  margin: 0 auto var(--spazio-xl);
 }
 
 
 /* ================================================
    MEDIA QUERY — Desktop (min 900px)
-   Le card diventano 2 colonne affiancate.
    ================================================ */
-@media (min-width: 900px) {
 
-  .promo__griglia {
+@media (min-width: 900px) {
+  .promo-griglia {
     grid-template-columns: repeat(2, 1fr);
   }
-
 }

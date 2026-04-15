@@ -6,17 +6,13 @@
   <meta name="description" content="COREP's Travel — Offerte e promozioni sui viaggi." />
   <title>Promozioni — COREP's Travel</title>
 
-  <!-- Foglio di stile condiviso del progetto -->
   <link rel="stylesheet" href="style.css" />
-  <!-- Foglio di stile specifico per questa pagina -->
   <link rel="stylesheet" href="promozioni.css" />
 </head>
 <body>
 
-  <!-- ===== NAVBAR ===== -->
   <header class="navbar" role="banner">
     <div class="navbar__interno">
-
       <a href="index.html" class="navbar__logo">
         COREP'<span>s</span> Travel
       </a>
@@ -31,26 +27,15 @@
         <a href="prenotazione.html" class="navbar__link">Prenota</a>
       </nav>
 
-      <button
-        class="navbar__hamburger"
-        id="hamburger"
-        aria-label="Apri o chiudi il menu"
-        aria-expanded="false"
-        aria-controls="menu-principale"
-      >
+      <button class="navbar__hamburger" id="hamburger" aria-label="Apri o chiudi il menu" aria-expanded="false" aria-controls="menu-principale">
         <span></span>
         <span></span>
         <span></span>
       </button>
-
     </div>
   </header>
 
-
-  <!-- ===== CONTENUTO PRINCIPALE ===== -->
   <main>
-
-    <!-- PAGE HEADER -->
     <section class="page-header" aria-label="Intestazione pagina promozioni">
       <div class="breadcrumb" aria-label="Percorso di navigazione">
         <a href="index.html">Home</a>
@@ -63,235 +48,149 @@
       </p>
     </section>
 
-
-    <!-- BANNER COUNTDOWN -->
-    <div class="promo__banner" role="alert" aria-label="Scadenza offerte">
-      <span class="promo__banner-testo">
-        ⏳ Offerte in scadenza —
-        <strong>prenota entro il 30 giugno 2025</strong>
+    <div class="banner-scadenza" role="alert">
+      <span class="banner-testo">
+        ⏳ Offerte in scadenza — 
+        <strong>prenota entro il <time datetime="2026-05-30">30 maggio 2026</time></strong> 
         per garantirti il prezzo scontato.
       </span>
     </div>
 
-
-    <!-- SEZIONE PROMOZIONI -->
     <section class="sezione" aria-labelledby="titolo-promozioni">
       <div class="contenitore">
-
-        <h2 id="titolo-promozioni" class="titolo-sezione testo-centro">
-          Le Nostre Offerte del Mese
-        </h2>
-        <p class="promo__intro testo-centro">
+        <h2 id="titolo-promozioni" class="titolo-sezione testo-centro">Le Nostre Offerte del Mese</h2>
+        <p class="promo-intro testo-centro">
           Abbiamo selezionato 4 destinazioni con sconti esclusivi per chi prenota in anticipo.
         </p>
 
-        <!-- GRIGLIA CARD PROMOZIONI -->
-        <div class="promo__griglia">
+        <div class="promo-griglia">
 
-
-          <!-- ── CARD 1: Giappone ── -->
           <article class="promo-card" aria-label="Promozione Giappone">
-
-            <!-- Etichetta sconto -->
-            <div class="promo-card__sconto" aria-label="Sconto del 25%">–25%</div>
-
-            <!-- Intestazione colorata -->
-            <div class="promo-card__header promo-card__header--giappone">
-              <span class="promo-card__emoji" aria-hidden="true">🗾</span>
-              <h3 class="promo-card__destinazione">Giappone</h3>
-              <p class="promo-card__sottotitolo">Tokyo · Kyoto · Osaka</p>
+            <div class="card-sconto" aria-label="Sconto del 25%">–25%</div>
+            <div class="card-header card-header-giappone">
+              <span class="card-emoji" aria-hidden="true">🗾</span>
+              <h3 class="card-destinazione">Giappone</h3>
+              <p class="card-sottotitolo">Tokyo · Kyoto · Osaka</p>
             </div>
-
-            <!-- Corpo card -->
-            <div class="promo-card__corpo">
-
-              <!-- Prezzi -->
-              <div class="promo-card__prezzi">
-                <span class="promo-card__prezzo-vecchio">€2.400</span>
-                <span class="promo-card__prezzo-nuovo">€1.800</span>
-                <span class="promo-card__per-persona">a persona</span>
+            <div class="card-corpo">
+              <div class="card-prezzi">
+                <span class="prezzo-vecchio">€2.400</span>
+                <span class="prezzo-nuovo">€1.800</span>
+                <span class="per-persona">a persona</span>
               </div>
-
-              <!-- Dettagli viaggio -->
-              <ul class="promo-card__dettagli" aria-label="Dettagli del viaggio">
-                <li>📅 Partenza: 15 settembre 2025</li>
+              <ul class="card-dettagli">
+                <li>📅 Partenza: <time datetime="2026-09-15">15 sett 2026</time></li>
                 <li>⏱ Durata: 14 giorni</li>
                 <li>👥 Posti rimasti: <strong>4</strong></li>
                 <li>🏨 Pacchetto: Luxury</li>
               </ul>
-
-              <!-- Cosa è incluso -->
-              <ul class="lista-spunta" aria-label="Cosa è incluso">
+              <ul class="lista-spunta">
                 <li>Voli andata e ritorno inclusi</li>
-                <li>Hotel 4 stelle in posizione centrale</li>
+                <li>Hotel 4 stelle in centro</li>
                 <li>Guida privata in italiano</li>
-                <li>Cerimonia del tè tradizionale</li>
               </ul>
-
-              <a href="prenotazione.html" class="bottone bottone--primario promo-card__bottone">
-                Prenota questa offerta
-              </a>
-
+              <a href="prenotazione.html" class="bottone bottone--primario card-bottone">Prenota ora</a>
             </div>
           </article>
 
-
-          <!-- ── CARD 2: Maldive ── -->
           <article class="promo-card" aria-label="Promozione Maldive">
-
-            <!-- Etichetta sconto + "più popolare" -->
-            <div class="promo-card__sconto promo-card__sconto--popolare" aria-label="Sconto del 30%, offerta più popolare">
-              –30% ⭐ Più popolare
+            <div class="card-sconto card-sconto-popolare">–30% ⭐ Popolare</div>
+            <div class="card-header card-header-maldive">
+              <span class="card-emoji" aria-hidden="true">🏝️</span>
+              <h3 class="card-destinazione">Maldive</h3>
+              <p class="card-sottotitolo">Atollo di Malé Nord</p>
             </div>
-
-            <div class="promo-card__header promo-card__header--maldive">
-              <span class="promo-card__emoji" aria-hidden="true">🏝️</span>
-              <h3 class="promo-card__destinazione">Maldive</h3>
-              <p class="promo-card__sottotitolo">Atollo di Malé Nord</p>
-            </div>
-
-            <div class="promo-card__corpo">
-
-              <div class="promo-card__prezzi">
-                <span class="promo-card__prezzo-vecchio">€3.200</span>
-                <span class="promo-card__prezzo-nuovo">€2.240</span>
-                <span class="promo-card__per-persona">a persona</span>
+            <div class="card-corpo">
+              <div class="card-prezzi">
+                <span class="prezzo-vecchio">€3.200</span>
+                <span class="prezzo-nuovo">€2.240</span>
               </div>
-
-              <ul class="promo-card__dettagli" aria-label="Dettagli del viaggio">
-                <li>📅 Partenza: 5 luglio 2025</li>
+              <ul class="card-dettagli">
+                <li>📅 Partenza: <time datetime="2026-08-05">5 ago 2026</time></li>
                 <li>⏱ Durata: 10 giorni</li>
-                <li>👥 Posti rimasti: <strong>6</strong></li>
                 <li>🏨 Pacchetto: Luxury</li>
               </ul>
-
-              <ul class="lista-spunta" aria-label="Cosa è incluso">
-                <li>Voli internazionali inclusi</li>
-                <li>Villa overwater con piscina privata</li>
+              <ul class="lista-spunta">
+                <li>Villa overwater privata</li>
                 <li>Pensione completa</li>
-                <li>Snorkeling e immersioni guidate</li>
+                <li>Snorkeling guidato</li>
               </ul>
-
-              <a href="prenotazione.html" class="bottone bottone--primario promo-card__bottone">
-                Prenota questa offerta
-              </a>
-
+              <a href="prenotazione.html" class="bottone bottone--primario card-bottone">Prenota ora</a>
             </div>
           </article>
 
-
-          <!-- ── CARD 3: Marocco ── -->
           <article class="promo-card" aria-label="Promozione Marocco">
-
-            <div class="promo-card__sconto" aria-label="Sconto del 20%">–20%</div>
-
-            <div class="promo-card__header promo-card__header--marocco">
-              <span class="promo-card__emoji" aria-hidden="true">🕌</span>
-              <h3 class="promo-card__destinazione">Marocco</h3>
-              <p class="promo-card__sottotitolo">Marrakech · Sahara · Fes</p>
+            <div class="card-sconto">–20%</div>
+            <div class="card-header card-header-marocco">
+              <span class="card-emoji" aria-hidden="true">🕌</span>
+              <h3 class="card-destinazione">Marocco</h3>
+              <p class="card-sottotitolo">Marrakech · Sahara</p>
             </div>
-
-            <div class="promo-card__corpo">
-
-              <div class="promo-card__prezzi">
-                <span class="promo-card__prezzo-vecchio">€1.100</span>
-                <span class="promo-card__prezzo-nuovo">€880</span>
-                <span class="promo-card__per-persona">a persona</span>
+            <div class="card-corpo">
+              <div class="card-prezzi">
+                <span class="prezzo-vecchio">€1.100</span>
+                <span class="prezzo-nuovo">€880</span>
               </div>
-
-              <ul class="promo-card__dettagli" aria-label="Dettagli del viaggio">
-                <li>📅 Partenza: 20 ottobre 2025</li>
+              <ul class="card-dettagli">
+                <li>📅 Partenza: <time datetime="2026-10-20">20 ott 2026</time></li>
                 <li>⏱ Durata: 10 giorni</li>
-                <li>👥 Posti rimasti: <strong>8</strong></li>
                 <li>🏕️ Pacchetto: Adventure</li>
               </ul>
-
-              <ul class="lista-spunta" aria-label="Cosa è incluso">
-                <li>Voli inclusi da Roma</li>
-                <li>Riad tradizionale con colazione</li>
-                <li>Notte nel deserto in tenda berbera</li>
-                <li>Escursione in cammello al tramonto</li>
+              <ul class="lista-spunta">
+                <li>Riad con colazione</li>
+                <li>Notte nel deserto</li>
+                <li>Escursione in cammello</li>
               </ul>
-
-              <a href="prenotazione.html" class="bottone bottone--primario promo-card__bottone">
-                Prenota questa offerta
-              </a>
-
+              <a href="prenotazione.html" class="bottone bottone--primario card-bottone">Prenota ora</a>
             </div>
           </article>
 
-
-          <!-- ── CARD 4: Norvegia ── -->
           <article class="promo-card" aria-label="Promozione Norvegia">
-
-            <div class="promo-card__sconto" aria-label="Sconto del 15%">–15%</div>
-
-            <div class="promo-card__header promo-card__header--norvegia">
-              <span class="promo-card__emoji" aria-hidden="true">🌌</span>
-              <h3 class="promo-card__destinazione">Norvegia</h3>
-              <p class="promo-card__sottotitolo">Fiordi · Tromsø · Lofoten</p>
+            <div class="card-sconto">–15%</div>
+            <div class="card-header card-header-norvegia">
+              <span class="card-emoji" aria-hidden="true">🌌</span>
+              <h3 class="card-destinazione">Norvegia</h3>
+              <p class="card-sottotitolo">Fiordi · Tromsø</p>
             </div>
-
-            <div class="promo-card__corpo">
-
-              <div class="promo-card__prezzi">
-                <span class="promo-card__prezzo-vecchio">€1.800</span>
-                <span class="promo-card__prezzo-nuovo">€1.530</span>
-                <span class="promo-card__per-persona">a persona</span>
+            <div class="card-corpo">
+              <div class="card-prezzi">
+                <span class="prezzo-vecchio">€1.800</span>
+                <span class="prezzo-nuovo">€1.530</span>
               </div>
-
-              <ul class="promo-card__dettagli" aria-label="Dettagli del viaggio">
-                <li>📅 Partenza: 10 gennaio 2026</li>
+              <ul class="card-dettagli">
+                <li>📅 Partenza: <time datetime="2027-01-10">10 gen 2027</time></li>
                 <li>⏱ Durata: 8 giorni</li>
-                <li>👥 Posti rimasti: <strong>10</strong></li>
                 <li>🏨 Pacchetto: Comfort</li>
               </ul>
-
-              <ul class="lista-spunta" aria-label="Cosa è incluso">
-                <li>Voli inclusi da Milano</li>
-                <li>Hotel di design con vista fiordo</li>
-                <li>Tour aurora boreale notturno</li>
-                <li>Crociera nei fiordi inclusa</li>
+              <ul class="lista-spunta">
+                <li>Hotel vista fiordo</li>
+                <li>Tour aurora boreale</li>
+                <li>Crociera inclusa</li>
               </ul>
-
-              <a href="prenotazione.html" class="bottone bottone--primario promo-card__bottone">
-                Prenota questa offerta
-              </a>
-
+              <a href="prenotazione.html" class="bottone bottone--primario card-bottone">Prenota ora</a>
             </div>
           </article>
+        </div>
 
-
-        </div><!-- /promo__griglia -->
-
-
-        <!-- NOTA LEGALE -->
-        <p class="promo__nota">
-          * I prezzi indicati sono per persona, in camera doppia, e includono le tasse aeroportuali.
-          Le promozioni sono valide salvo esaurimento posti e possono essere revocate senza preavviso.
-          Per ulteriori informazioni contatta il nostro team su
+        <p class="promo-nota">
+          * I prezzi indicati sono per persona. Informazioni su 
           <a href="mailto:info@corepstravel.it" class="link">info@corepstravel.it</a>.
         </p>
-
       </div>
     </section>
 
-
-    <!-- CTA FINALE -->
     <section class="sezione sezione--scura" aria-label="Call to action finale">
       <div class="contenitore testo-centro">
         <h2 class="titolo-sezione">Non trovi la destinazione che cerchi?</h2>
-        <p style="color: rgba(255,255,255,0.75); max-width: 520px; margin: 0 auto var(--spazio-xl);">
-          Costruiamo insieme il viaggio su misura per te. Compila il modulo e ti invieremo un preventivo gratuito entro 24 ore.
+        <p class="cta-testo">
+          Costruiamo insieme il viaggio su misura per te. Compila il modulo e ti invieremo un preventivo gratuito.
         </p>
         <a href="prenotazione.html" class="bottone bottone--primario">Richiedi un Preventivo</a>
       </div>
     </section>
-
   </main>
 
-
-  <!-- ===== FOOTER ===== -->
+  <!-- ===== FOOTER (identico alle altre pagine) ===== -->
   <footer class="footer" role="contentinfo">
     <div class="contenitore">
 
@@ -347,18 +246,14 @@
     </div>
   </footer>
 
-
-  <!-- Script hamburger -->
   <script>
     const hamburger = document.getElementById('hamburger');
-    const menu      = document.getElementById('menu-principale');
-
-    hamburger.addEventListener('click', function () {
+    const menu = document.getElementById('menu-principale');
+    hamburger.addEventListener('click', () => {
       const aperto = menu.classList.toggle('aperto');
-      hamburger.classList.toggle('aperto', aperto);
       hamburger.setAttribute('aria-expanded', aperto);
     });
   </script>
-
 </body>
 </html>
+  
