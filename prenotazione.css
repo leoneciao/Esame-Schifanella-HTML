@@ -1,248 +1,299 @@
 /* ================================================
-   prenotazione.css
-   COREP's Travel — Pagina di Prenotazione
-   Mobile First
+   copiaprenotazione.css — COREP's Travel
+   Pagina di Prenotazione
+   Dipende da style.css (variabili, reset, utility,
+   navbar, footer, bottoni già definiti lì).
    ================================================ */
 
 
-/* ---- LAYOUT PRINCIPALE PAGINA ---- */
-/*
-  Su mobile: form e sidebar impilati in colonna.
-  Su desktop: form a sinistra (2/3) e sidebar a destra (1/3).
-*/
-.prenotazione__layout {
+/* ================================================
+   LAYOUT PRINCIPALE — Grid
+   Mobile: 1 colonna. Desktop: form + sidebar.
+   ================================================ */
+
+.prenot-layout {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--spazio-xl);
+  margin-block: var(--spazio-xl);
+}
+
+@media (min-width: 900px) {
+  .prenot-layout {
+    grid-template-columns: 1fr 350px;
+    align-items: start;
+  }
+}
+
+
+/* ================================================
+   SIDEBAR
+   ================================================ */
+
+.prenot-sidebar {
   display: flex;
   flex-direction: column;
   gap: var(--spazio-xl);
 }
 
-.prenotazione__form-wrap {
-  width: 100%;
+@media (min-width: 900px) {
+  .prenot-sidebar {
+    position: sticky;
+    top: calc(var(--altezza-nav) + var(--spazio-m));
+  }
 }
 
-
-/* ---- FIELDSET ---- */
-/*
-  I <fieldset> raggruppano visivamente le sezioni del form.
-  Usiamo un bordo sottile con colore accento in cima.
-*/
-.form__fieldset {
-  border: 1px solid var(--colore-bordo);
-  border-radius: var(--raggio-lg);
-  padding: var(--spazio-l);
-  margin-bottom: var(--spazio-l);
+.sidebar-card {
   background-color: var(--colore-bianco);
-  box-shadow: var(--ombra);
-}
-
-/* Rimuove lo stile di default del browser per <fieldset> */
-.form__fieldset:last-of-type {
-  margin-bottom: 0;
-}
-
-.form__legend {
-  font-family: var(--font-titoli);
-  font-size: var(--fs-medio);
-  font-weight: 700;
-  color: var(--colore-primario);
-  padding: 0 var(--spazio-s);
-
-  /* Striscia accento a sinistra */
-  border-left: 3px solid var(--colore-accento);
-  padding-left: var(--spazio-m);
-}
-
-
-/* ---- GRIGLIA CHECKBOX ---- */
-/*
-  Su mobile: 1 colonna.
-  Su tablet: 2 colonne affiancate.
-*/
-.form__checkbox-griglia {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: var(--spazio-s);
-  margin-top: var(--spazio-xs);
-}
-
-/* Gruppo radio: colonna singola */
-.form__radio-gruppo {
-  display: flex;
-  flex-direction: column;
-  gap: var(--spazio-s);
-}
-
-/* Label privacy con testo su più righe */
-.form__check--privacy {
-  align-items: flex-start;
-  line-height: 1.5;
-}
-
-.form__check--privacy input {
-  margin-top: 3px; /* allineamento verticale con testo */
-  flex-shrink: 0;
-}
-
-
-/* ---- PULSANTE DI INVIO ---- */
-.prenotazione__submit {
-  text-align: center;
-  margin-top: var(--spazio-l);
-}
-
-.prenotazione__bottone-submit {
-  width: 100%;
-  font-size: var(--fs-medio);
-  padding: 1rem var(--spazio-xl);
-}
-
-.prenotazione__nota-submit {
-  font-size: var(--fs-piccolo);
-  color: var(--colore-testo-chiaro);
-  margin-top: var(--spazio-m);
-  margin-bottom: 0;
-}
-
-
-/* ---- SIDEBAR ---- */
-.prenotazione__sidebar {
-  display: flex;
-  flex-direction: column;
-  gap: var(--spazio-l);
-  width: 100%;
-}
-
-/* Card generica della sidebar */
-.sidebar__card {
-  background-color: var(--colore-bianco);
-  border-radius: var(--raggio-lg);
   border: 1px solid var(--colore-bordo);
+  border-radius: var(--raggio);
   padding: var(--spazio-l);
-  box-shadow: var(--ombra);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
 }
 
-/* Card scura della sidebar (contatti) */
-.sidebar__card--scura {
+.sidebar-card.scura {
   background-color: var(--colore-primario);
-  border-color: var(--colore-primario);
 }
 
-.sidebar__titolo {
+.sidebar-titolo {
   font-family: var(--font-titoli);
-  font-size: var(--fs-medio);
-  color: var(--colore-primario);
+  font-size: var(--fs-grande);
   margin-bottom: var(--spazio-m);
-
-  /* Decorazione accento sotto il titolo */
-  padding-bottom: var(--spazio-s);
   border-bottom: 2px solid var(--colore-accento);
+  padding-bottom: var(--spazio-s);
+  display: inline-block;
 }
 
-/* Titolo chiaro (su sfondo scuro) */
-.sidebar__titolo--chiaro {
+.sidebar-titolo.chiaro {
   color: var(--colore-bianco);
-  border-bottom-color: rgba(255, 255, 255, 0.3);
 }
 
-
-/* ---- LISTA PACCHETTI NELLA SIDEBAR ---- */
-.sidebar__lista-pacchetti {
+.lista-pacchetti {
   list-style: none;
   display: flex;
   flex-direction: column;
-  gap: var(--spazio-m);
-  margin-bottom: var(--spazio-l);
+  gap: var(--spazio-s);
+  margin-bottom: var(--spazio-m);
 }
 
-/* Ogni riga: badge + prezzo affiancati */
-.sidebar__pacchetto {
+.sidebar-pacchetto {
   display: flex;
-  align-items: center;
   justify-content: space-between;
-  padding: var(--spazio-s) 0;
-  border-bottom: 1px solid var(--colore-bordo);
+  align-items: center;
 }
 
-/* Pseudo-classe: rimuove il bordo dall'ultimo elemento */
-.sidebar__pacchetto:last-child {
-  border-bottom: none;
-}
-
-.sidebar__prezzo {
-  font-family: var(--font-titoli);
-  font-weight: 700;
-  font-size: var(--fs-base);
+.sidebar-prezzo {
+  font-weight: 600;
   color: var(--colore-primario);
+  font-size: var(--fs-piccolo);
 }
 
-
-/* ---- LINK DI CONTATTO NELLA SIDEBAR ---- */
-.sidebar__contatto-link {
+.contatto-link {
   display: block;
-  color: rgba(255, 255, 255, 0.8);
+  color: rgba(255, 255, 255, 0.75);
   font-size: var(--fs-piccolo);
   padding: var(--spazio-s) 0;
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
   transition: color var(--transizione);
 }
 
-/* Pseudo-classe: hover */
-.sidebar__contatto-link:hover {
-  color: var(--colore-accento);
-}
-
-/* Pseudo-classe: ultimo link senza bordo */
-.sidebar__contatto-link:last-child {
+.contatto-link:last-child {
   border-bottom: none;
 }
 
-
-/* ================================================
-   MEDIA QUERY — Tablet (min 768px)
-   ================================================ */
-@media (min-width: 768px) {
-
-  /* Checkbox: 2 colonne affiancate */
-  .form__checkbox-griglia {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  /* Radio budget: riga orizzontale */
-  .form__radio-gruppo {
-    flex-direction: row;
-    flex-wrap: wrap;
-    gap: var(--spazio-m);
-  }
-
-  /* Pulsante submit: dimensioni automatiche (non più 100%) */
-  .prenotazione__bottone-submit {
-    width: auto;
-    min-width: 280px;
-  }
+.contatto-link:hover {
+  color: var(--colore-accento);
 }
 
 
 /* ================================================
-   MEDIA QUERY — Desktop (min 1024px)
+   FORM — FIELDSET
    ================================================ */
-@media (min-width: 1024px) {
 
-  /* Layout principale: form (sinistra) + sidebar (destra) */
-  .prenotazione__layout {
+.form-fieldset {
+  border: 1px solid var(--colore-bordo);
+  border-radius: var(--raggio-lg);
+  padding: var(--spazio-l);
+  margin-bottom: var(--spazio-l);
+  background-color: var(--colore-bianco);
+  position: relative;
+}
+
+/* ::after — barra colorata in cima al fieldset */
+.form-fieldset::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background-color: var(--colore-accento);
+  border-radius: var(--raggio-lg) var(--raggio-lg) 0 0;
+}
+
+.form-legend {
+  font-family: var(--font-titoli);
+  font-weight: 700;
+  color: var(--colore-primario);
+  padding: 0 var(--spazio-s);
+}
+
+.form-riga {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spazio-m);
+  margin-bottom: var(--spazio-m);
+}
+
+@media (min-width: 600px) {
+  .form-riga {
     flex-direction: row;
-    align-items: flex-start;
-    gap: var(--spazio-xxl);
   }
-
-  /* Form occupa i 2/3 dello spazio */
-  .prenotazione__form-wrap {
-    flex: 2;
-  }
-
-  /* Sidebar occupa 1/3, rimane fissa mentre si scrolla */
-  .prenotazione__sidebar {
+  .form-riga .form-gruppo {
     flex: 1;
-    position: sticky;
-    top: calc(var(--altezza-nav) + var(--spazio-l));
   }
+}
+
+.form-gruppo {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spazio-xs);
+  margin-bottom: var(--spazio-m);
+}
+
+.form-gruppo:last-child {
+  margin-bottom: 0;
+}
+
+.form-etichetta {
+  font-size: var(--fs-piccolo);
+  font-weight: 600;
+  color: var(--colore-primario);
+}
+
+/* ::after — asterisco obbligatorio */
+.form-etichetta::after {
+  content: ' *';
+  color: var(--colore-accento);
+}
+
+.etichetta-opzionale::after {
+  content: ' (opzionale)';
+  font-weight: 400;
+  color: var(--colore-testo-chiaro);
+}
+
+/* Selettori di attributo per gli input del form */
+.form-input,
+.form-select,
+.form-textarea {
+  width: 100%;
+  padding: 0.75rem;
+  border: 2px solid var(--colore-bordo);
+  border-radius: var(--raggio);
+  font-family: var(--font-testo);
+  font-size: var(--fs-base);
+  color: var(--colore-testo);
+  background-color: var(--colore-bianco);
+  transition: border-color var(--transizione), box-shadow var(--transizione);
+}
+
+/* :focus — feedback visivo per tastiera e mouse */
+.form-input:focus,
+.form-select:focus,
+.form-textarea:focus {
+  outline: none;
+  border-color: var(--colore-secondario);
+  box-shadow: 0 0 0 3px rgba(46, 109, 164, 0.15);
+}
+
+.form-textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+.form-checkbox-griglia {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--spazio-s);
+  margin-bottom: var(--spazio-m);
+}
+
+.form-radio-gruppo {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spazio-s);
+}
+
+.form-check {
+  display: flex;
+  align-items: center;
+  gap: var(--spazio-s);
+  cursor: pointer;
+  font-size: var(--fs-base);
+  color: var(--colore-testo-chiaro);
+}
+
+.form-check input[type="checkbox"],
+.form-check input[type="radio"] {
+  width: 18px;
+  height: 18px;
+  accent-color: var(--colore-secondario);
+  cursor: pointer;
+}
+
+
+/* ================================================
+   BOX PROMO INFO
+   ================================================ */
+
+.promo-info {
+  margin-top: var(--spazio-s);
+  background-color: rgba(232, 160, 32, 0.1);
+  border: 1px solid var(--colore-accento);
+  border-radius: var(--raggio);
+  padding: var(--spazio-m);
+}
+
+.promo-info-titolo {
+  font-weight: 700;
+  color: var(--colore-primario);
+  margin-bottom: var(--spazio-xs);
+}
+
+.promo-info-testo {
+  font-size: var(--fs-piccolo);
+  color: var(--colore-testo-chiaro);
+  margin-bottom: var(--spazio-xs);
+}
+
+.promo-info-link {
+  font-size: var(--fs-piccolo);
+  color: var(--colore-secondario);
+  text-decoration: underline;
+}
+
+
+/* ================================================
+   ZONA SUBMIT
+   ================================================ */
+
+.prenot-submit {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--spazio-m);
+  margin-top: var(--spazio-xxl);
+  text-align: center;
+}
+
+.bottone-submit {
+  min-width: 250px;
+  padding: 0.8rem 2.5rem;
+}
+
+.nota-submit {
+  font-size: var(--fs-piccolo);
+  color: var(--colore-testo-chiaro);
+  max-width: 450px;
 }

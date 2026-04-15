@@ -6,9 +6,8 @@
   <meta name="description" content="COREP's Travel — Prenota il tuo viaggio su misura." />
   <title>Prenotazione — COREP's Travel</title>
 
-  <!-- Stesso foglio di stile condiviso del progetto -->
+  
   <link rel="stylesheet" href="style.css" />
-  <!-- Foglio di stile specifico per questa pagina -->
   <link rel="stylesheet" href="prenotazione.css" />
 </head>
 <body>
@@ -68,20 +67,17 @@
     <section class="sezione" aria-labelledby="titolo-form">
       <div class="contenitore">
 
-        <div class="prenotazione__layout">
+        <div class="prenot-layout">
 
           <!-- ===== FORM ===== -->
-          <div class="prenotazione__form-wrap">
+          <div class="prenot-form-wrap">
 
             <h2 id="titolo-form" class="titolo-sezione">Richiesta di Prenotazione</h2>
             <p>Tutti i campi contrassegnati con <strong style="color: var(--colore-accento);">*</strong> sono obbligatori.</p>
 
-            <!--
-              NOTA: action="#" è un segnaposto.
-              In un progetto reale si mette l'URL del server che riceve i dati.
-            -->
+            
             <form
-              class="form prenotazione__form"
+              class="form prenot-form"
               id="form-prenotazione"
               action="#"
               method="post"
@@ -90,15 +86,15 @@
             >
 
               <!-- ── 1. DATI PERSONALI ── -->
-              <fieldset class="form__fieldset">
-                <legend class="form__legend">Dati Personali</legend>
+              <fieldset class="form-fieldset">
+                <legend class="form-legend">Dati Personali</legend>
 
                 <!-- Nome / Cognome -->
-                <div class="form__riga">
-                  <div class="form__gruppo">
-                    <label class="form__etichetta" for="nome">Nome</label>
+                <div class="form-riga">
+                  <div class="form-gruppo">
+                    <label class="form-etichetta" for="nome">Nome</label>
                     <input
-                      class="form__input"
+                      class="form-input"
                       type="text"
                       id="nome"
                       name="nome"
@@ -109,10 +105,10 @@
                     />
                   </div>
 
-                  <div class="form__gruppo">
-                    <label class="form__etichetta" for="cognome">Cognome</label>
+                  <div class="form-gruppo">
+                    <label class="form-etichetta" for="cognome">Cognome</label>
                     <input
-                      class="form__input"
+                      class="form-input"
                       type="text"
                       id="cognome"
                       name="cognome"
@@ -125,11 +121,11 @@
                 </div>
 
                 <!-- Email / Telefono -->
-                <div class="form__riga">
-                  <div class="form__gruppo">
-                    <label class="form__etichetta" for="email">Email</label>
+                <div class="form-riga">
+                  <div class="form-gruppo">
+                    <label class="form-etichetta" for="email">Email</label>
                     <input
-                      class="form__input"
+                      class="form-input"
                       type="email"
                       id="email"
                       name="email"
@@ -139,10 +135,10 @@
                     />
                   </div>
 
-                  <div class="form__gruppo">
-                    <label class="form__etichetta form__etichetta--opzionale" for="telefono">Telefono</label>
+                  <div class="form-gruppo">
+                    <label class="form-etichetta etichetta-opzionale" for="telefono">Telefono</label>
                     <input
-                      class="form__input"
+                      class="form-input"
                       type="tel"
                       id="telefono"
                       name="telefono"
@@ -156,26 +152,42 @@
 
 
               <!-- ── 2. DETTAGLI DEL VIAGGIO ── -->
-              <fieldset class="form__fieldset">
-                <legend class="form__legend">Dettagli del Viaggio</legend>
+              <fieldset class="form-fieldset">
+                <legend class="form-legend">Dettagli del Viaggio</legend>
 
                 <!-- Pacchetto -->
-                <div class="form__gruppo">
-                  <label class="form__etichetta" for="pacchetto">Tipo di pacchetto</label>
-                  <select class="form__select" id="pacchetto" name="pacchetto" required>
+                <div class="form-gruppo">
+                  <label class="form-etichetta" for="pacchetto">Tipo di pacchetto</label>
+                  <select class="form-select" id="pacchetto" name="pacchetto" required>
                     <option value="" disabled selected>— Seleziona un pacchetto —</option>
-                    <option value="adventure">🏔️  Adventure — da €890 / persona</option>
-                    <option value="comfort">🏨  Comfort — da €1.400 / persona</option>
-                    <option value="luxury">✨  Luxury — da €3.200 / persona</option>
-                    <option value="personalizzato">🗺️  Pacchetto personalizzato</option>
+
+                    <optgroup label="Pacchetti Standard">
+                      <option value="adventure">🏔️  Adventure — da €890 / persona</option>
+                      <option value="comfort">🏨  Comfort — da €1.400 / persona</option>
+                      <option value="luxury">✨  Luxury — da €3.200 / persona</option>
+                      <option value="personalizzato">🗺️  Pacchetto personalizzato</option>
+                    </optgroup>
+
+                    <optgroup label="🔥 Offerte Speciali (sconto limitato)">
+                      <option value="promo-giappone">🗾  Giappone — €1.800 (-25%) · 15 set 2025</option>
+                      <option value="promo-maldive">🏝️  Maldive — €2.240 (-30%) · 5 lug 2025</option>
+                      <option value="promo-marocco">🕌  Marocco — €880 (-20%) · 20 ott 2025</option>
+                      <option value="promo-norvegia">🌌  Norvegia — €1.530 (-15%) · 10 gen 2026</option>
+                    </optgroup>
                   </select>
+                  <!-- Box promozione -->
+                  <div class="promo-info" id="promo-info" hidden>
+                    <p class="promo-info-titolo">🔥 Offerta selezionata</p>
+                    <p class="promo-info-testo" id="promo-info-testo"></p>
+                    <a href="promozioni.html" class="link promo-info-link">Vedi tutti i dettagli dell'offerta →</a>
+                  </div>
                 </div>
 
                 <!-- Destinazione -->
-                <div class="form__gruppo">
-                  <label class="form__etichetta form__etichetta--opzionale" for="destinazione">Destinazione desiderata</label>
+                <div class="form-gruppo">
+                  <label class="form-etichetta etichetta-opzionale" for="destinazione">Destinazione desiderata</label>
                   <input
-                    class="form__input"
+                    class="form-input"
                     type="text"
                     id="destinazione"
                     name="destinazione"
@@ -184,11 +196,11 @@
                 </div>
 
                 <!-- Date -->
-                <div class="form__riga">
-                  <div class="form__gruppo">
-                    <label class="form__etichetta" for="data-partenza">Data di partenza</label>
+                <div class="form-riga">
+                  <div class="form-gruppo">
+                    <label class="form-etichetta" for="data-partenza">Data di partenza</label>
                     <input
-                      class="form__input"
+                      class="form-input"
                       type="date"
                       id="data-partenza"
                       name="data_partenza"
@@ -196,10 +208,10 @@
                     />
                   </div>
 
-                  <div class="form__gruppo">
-                    <label class="form__etichetta" for="data-ritorno">Data di ritorno</label>
+                  <div class="form-gruppo">
+                    <label class="form-etichetta" for="data-ritorno">Data di ritorno</label>
                     <input
-                      class="form__input"
+                      class="form-input"
                       type="date"
                       id="data-ritorno"
                       name="data_ritorno"
@@ -209,11 +221,11 @@
                 </div>
 
                 <!-- Numero di viaggiatori -->
-                <div class="form__riga">
-                  <div class="form__gruppo">
-                    <label class="form__etichetta" for="adulti">Adulti</label>
+                <div class="form-riga">
+                  <div class="form-gruppo">
+                    <label class="form-etichetta" for="adulti">Adulti</label>
                     <input
-                      class="form__input"
+                      class="form-input"
                       type="number"
                       id="adulti"
                       name="adulti"
@@ -224,10 +236,10 @@
                     />
                   </div>
 
-                  <div class="form__gruppo">
-                    <label class="form__etichetta form__etichetta--opzionale" for="bambini">Bambini (0–12 anni)</label>
+                  <div class="form-gruppo">
+                    <label class="form-etichetta etichetta-opzionale" for="bambini">Bambini (0–12 anni)</label>
                     <input
-                      class="form__input"
+                      class="form-input"
                       type="number"
                       id="bambini"
                       name="bambini"
@@ -242,42 +254,42 @@
 
 
               <!-- ── 3. PREFERENZE ── -->
-              <fieldset class="form__fieldset">
-                <legend class="form__legend">Preferenze e Servizi Extra</legend>
+              <fieldset class="form-fieldset">
+                <legend class="form-legend">Preferenze e Servizi Extra</legend>
 
                 <!-- Checkbox servizi aggiuntivi -->
-                <p class="form__etichetta form__etichetta--opzionale" style="margin-bottom: var(--spazio-s);">
+                <p class="form-etichetta etichetta-opzionale" style="margin-bottom: var(--spazio-s);">
                   Servizi aggiuntivi desiderati
                 </p>
 
-                <div class="form__checkbox-griglia">
+                <div class="form-checkbox-griglia">
 
-                  <label class="form__check">
+                  <label class="form-check">
                     <input type="checkbox" name="servizi" value="assicurazione" />
                     Assicurazione viaggio
                   </label>
 
-                  <label class="form__check">
+                  <label class="form-check">
                     <input type="checkbox" name="servizi" value="transfer" />
                     Transfer aeroporto
                   </label>
 
-                  <label class="form__check">
+                  <label class="form-check">
                     <input type="checkbox" name="servizi" value="guida" />
                     Guida privata
                   </label>
 
-                  <label class="form__check">
+                  <label class="form-check">
                     <input type="checkbox" name="servizi" value="mezza-pensione" />
                     Mezza pensione
                   </label>
 
-                  <label class="form__check">
+                  <label class="form-check">
                     <input type="checkbox" name="servizi" value="pensione-completa" />
                     Pensione completa
                   </label>
 
-                  <label class="form__check">
+                  <label class="form-check">
                     <input type="checkbox" name="servizi" value="esperienze" />
                     Esperienze locali
                   </label>
@@ -285,28 +297,28 @@
                 </div>
 
                 <!-- Budget indicativo (radio) -->
-                <p class="form__etichetta" style="margin-top: var(--spazio-l); margin-bottom: var(--spazio-s);">
+                <p class="form-etichetta" style="margin-top: var(--spazio-l); margin-bottom: var(--spazio-s);">
                   Budget indicativo per persona
                 </p>
 
-                <div class="form__radio-gruppo" role="radiogroup" aria-label="Budget per persona">
+                <div class="form-radio-gruppo" role="radiogroup" aria-label="Budget per persona">
 
-                  <label class="form__check">
+                  <label class="form-check">
                     <input type="radio" name="budget" value="sotto-1000" required />
                     Fino a €1.000
                   </label>
 
-                  <label class="form__check">
+                  <label class="form-check">
                     <input type="radio" name="budget" value="1000-2000" />
                     €1.000 – €2.000
                   </label>
 
-                  <label class="form__check">
+                  <label class="form-check">
                     <input type="radio" name="budget" value="2000-3500" />
                     €2.000 – €3.500
                   </label>
 
-                  <label class="form__check">
+                  <label class="form-check">
                     <input type="radio" name="budget" value="oltre-3500" />
                     Oltre €3.500
                   </label>
@@ -317,15 +329,15 @@
 
 
               <!-- ── 4. MESSAGGIO ── -->
-              <fieldset class="form__fieldset">
-                <legend class="form__legend">Note e Richieste Speciali</legend>
+              <fieldset class="form-fieldset">
+                <legend class="form-legend">Note e Richieste Speciali</legend>
 
-                <div class="form__gruppo">
-                  <label class="form__etichetta form__etichetta--opzionale" for="messaggio">
+                <div class="form-gruppo">
+                  <label class="form-etichetta etichetta-opzionale" for="messaggio">
                     Messaggio
                   </label>
                   <textarea
-                    class="form__textarea"
+                    class="form-textarea"
                     id="messaggio"
                     name="messaggio"
                     placeholder="Raccontaci le tue aspettative, esigenze particolari, allergie alimentari, accessibilità…"
@@ -334,9 +346,9 @@
                 </div>
 
                 <!-- Come ci hai conosciuto -->
-                <div class="form__gruppo">
-                  <label class="form__etichetta form__etichetta--opzionale" for="fonte">Come ci hai conosciuto?</label>
-                  <select class="form__select" id="fonte" name="fonte">
+                <div class="form-gruppo">
+                  <label class="form-etichetta etichetta-opzionale" for="fonte">Come ci hai conosciuto?</label>
+                  <select class="form-select" id="fonte" name="fonte">
                     <option value="" disabled selected>— Seleziona —</option>
                     <option value="google">Ricerca Google</option>
                     <option value="social">Social media</option>
@@ -347,8 +359,8 @@
                 </div>
 
                 <!-- Privacy -->
-                <div class="form__gruppo">
-                  <label class="form__check form__check--privacy">
+                <div class="form-gruppo">
+                  <label class="form-check check-privacy">
                     <input
                       type="checkbox"
                       name="privacy"
@@ -366,41 +378,41 @@
 
 
               <!-- ── SUBMIT ── -->
-              <div class="prenotazione__submit">
-                <button type="submit" class="bottone bottone--primario prenotazione__bottone-submit">
+              <div class="prenot-submit">
+                <button type="submit" class="bottone bottone--primario bottone-submit">
                   Invia Richiesta di Prenotazione
                 </button>
-                <p class="prenotazione__nota-submit">
+                <p class="nota-submit">
                   Riceverai una conferma via email entro 24 ore. Nessun pagamento richiesto in questa fase.
                 </p>
               </div>
 
             </form>
 
-          </div><!-- /prenotazione__form-wrap -->
+          </div><!-- /prenot-form-wrap -->
 
 
           <!-- ===== SIDEBAR INFO ===== -->
-          <aside class="prenotazione__sidebar" aria-label="Informazioni utili">
+          <aside class="prenot-sidebar" aria-label="Informazioni utili">
 
             <!-- Riepilogo pacchetti -->
-            <div class="sidebar__card">
-              <h3 class="sidebar__titolo">I Nostri Pacchetti</h3>
-              <ul class="sidebar__lista-pacchetti">
+            <div class="sidebar-card">
+              <h3 class="sidebar-titolo">I Nostri Pacchetti</h3>
+              <ul class="lista-pacchetti">
 
-                <li class="sidebar__pacchetto">
+                <li class="sidebar-pacchetto">
                   <span class="badge badge--adventure">Adventure</span>
-                  <span class="sidebar__prezzo">da €890</span>
+                  <span class="sidebar-prezzo">da €890</span>
                 </li>
 
-                <li class="sidebar__pacchetto">
+                <li class="sidebar-pacchetto">
                   <span class="badge badge--comfort">Comfort</span>
-                  <span class="sidebar__prezzo">da €1.400</span>
+                  <span class="sidebar-prezzo">da €1.400</span>
                 </li>
 
-                <li class="sidebar__pacchetto">
+                <li class="sidebar-pacchetto">
                   <span class="badge badge--luxury">Luxury</span>
-                  <span class="sidebar__prezzo">da €3.200</span>
+                  <span class="sidebar-prezzo">da €3.200</span>
                 </li>
 
               </ul>
@@ -410,8 +422,8 @@
             </div>
 
             <!-- Perché sceglierci -->
-            <div class="sidebar__card">
-              <h3 class="sidebar__titolo">Perché Sceglierci</h3>
+            <div class="sidebar-card">
+              <h3 class="sidebar-titolo">Perché Sceglierci</h3>
               <ul class="lista-spunta">
                 <li>Consulenza gratuita personalizzata</li>
                 <li>Nessun pagamento anticipato</li>
@@ -422,27 +434,27 @@
             </div>
 
             <!-- Contatti rapidi -->
-            <div class="sidebar__card sidebar__card--scura">
-              <h3 class="sidebar__titolo sidebar__titolo--chiaro">Hai domande?</h3>
+            <div class="sidebar-card sidebar-card scura">
+              <h3 class="sidebar-titolo sidebar-titolo chiaro">Hai domande?</h3>
               <p style="color: rgba(255,255,255,0.75); font-size: var(--fs-piccolo); margin-bottom: var(--spazio-m);">
                 Il nostro team è disponibile dal lunedì al venerdì, 9:00–18:00.
               </p>
               <address style="font-style: normal;">
-                <a href="tel:+390600000000" class="sidebar__contatto-link">
+                <a href="tel:+390600000000" class="contatto-link">
                   📞 +39 06 0000000
                 </a>
-                <a href="mailto:info@corepstravel.it" class="sidebar__contatto-link">
+                <a href="mailto:info@corepstravel.it" class="contatto-link">
                   ✉️ info@corepstravel.it
                 </a>
-                <a href="contatti.html" class="sidebar__contatto-link">
+                <a href="contatti.html" class="contatto-link">
                   💬 Vai alla pagina Contatti
                 </a>
               </address>
             </div>
 
-          </aside><!-- /prenotazione__sidebar -->
+          </aside><!-- /prenot-sidebar -->
 
-        </div><!-- /prenotazione__layout -->
+        </div><!-- /prenot-layout -->
 
       </div><!-- /contenitore -->
     </section>
@@ -520,7 +532,7 @@
   </footer>
 
 
-  <!-- Script hamburger (identico alle altre pagine) -->
+  <!-- Script hamburger  -->
   <script>
     const hamburger = document.getElementById('hamburger');
     const menu      = document.getElementById('menu-principale');
@@ -530,10 +542,6 @@
       hamburger.classList.toggle('aperto', aperto);
       hamburger.setAttribute('aria-expanded', aperto);
     });
-
-    /* Validazione minima lato client: data ritorno >= data partenza */
-    const inputPartenza = document.getElementById('data-partenza');
-    const inputRitorno  = document.getElementById('data-ritorno');
 
     inputPartenza.addEventListener('change', function () {
       inputRitorno.min = this.value;
@@ -553,6 +561,32 @@
       alert('Grazie! La tua richiesta è stata inviata. Ti contatteremo entro 24 ore.');
       formEl.reset();
     });
+    const promoInfo = {
+  'promo-giappone': { testo: 'Giappone — 14 giorni · Partenza 15 set 2025 · €1.800/persona (-25%)', partenza: '2025-09-15', ritorno: '2025-09-29' },
+  'promo-maldive':  { testo: 'Maldive — 10 giorni · Partenza 5 lug 2025 · €2.240/persona (-30%)',  partenza: '2025-07-05', ritorno: '2025-07-15' },
+  'promo-marocco':  { testo: 'Marocco — 10 giorni · Partenza 20 ott 2025 · €880/persona (-20%)',   partenza: '2025-10-20', ritorno: '2025-10-30' },
+  'promo-norvegia': { testo: 'Norvegia — 8 giorni · Partenza 10 gen 2026 · €1.530/persona (-15%)', partenza: '2026-01-10', ritorno: '2026-01-18' }
+};
+
+const selectPacchetto = document.getElementById('pacchetto');
+const boxPromo        = document.getElementById('promo-info');
+const testoPromo      = document.getElementById('promo-info-testo');
+const inputPartenza   = document.getElementById('data-partenza');
+const inputRitorno    = document.getElementById('data-ritorno');
+
+selectPacchetto.addEventListener('change', function () {
+  const valore = this.value;
+  if (promoInfo[valore]) {
+    const dati = promoInfo[valore];
+    testoPromo.textContent = dati.testo;
+    inputPartenza.value    = dati.partenza;
+    inputRitorno.value     = dati.ritorno;
+    inputRitorno.min       = dati.partenza;
+    boxPromo.hidden        = false;
+  } else {
+    boxPromo.hidden = true;
+  }
+});
   </script>
 
 </body>
