@@ -684,6 +684,41 @@ strong {
   color: var(--colore-testo-chiaro);
 }
 
+.lista-itinerario::before {
+  position: absolute;
+  display: block;
+  border-left: 1px dashed orange;
+  width: 1px;
+  left: 5px;
+  bottom: 5px;
+  top: 5px;
+  content: "";
+}
+
+.lista-itinerario {
+  position: relative;
+  list-style: none;
+  margin-bottom: 15px;
+}
+
+.lista-itinerario .elemento-itinerario::before {
+  background: orange;
+  border: 1px solid #cda434;
+  border-radius: 10px;
+  content: "";
+  display: block;
+  height: 11px;
+  left: 0;
+  position: absolute;
+  top: 5px;
+  width: 11px;
+}
+
+.lista-itinerario .elemento-itinerario {
+  padding-left: 1.5rem;
+  position: relative;
+}
+
 /* --- TABELLA --- */
 .tabella-wrap {
   overflow-x: auto;
@@ -984,6 +1019,11 @@ strong {
   border-radius: var(--raggio-lg);
   box-shadow: var(--ombra);
   border: 1px solid var(--colore-bordo);
+}
+
+.background-hero {
+  background-repeat: no-repeat;
+  background-size: 100%;
 }
 
 /* ================================================
