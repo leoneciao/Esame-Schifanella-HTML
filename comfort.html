@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="it">
 
 <head>
     <meta charset="UTF-8">
@@ -26,8 +26,9 @@
                 <a href="adventure.html" class="navbar__link">Adventure</a>
                 <a href="comfort.html" class="navbar__link attivo">Comfort</a>
                 <a href="luxury.html" class="navbar__link">Luxury</a>
-                <a href="about.html" class="navbar__link">Chi Siamo</a>
-                <a href="contatti.html" class="navbar__link">Contatti</a>
+                <a href="about.html"      class="navbar__link">Chi Siamo/Contatti</a>
+                <a href="prenotazione.html" class="navbar__link">Prenota</a>
+                <a href="promo.html"       class="navbar__link">Promo</a>
             </nav>
 
             <!-- Hamburger mobile -->
@@ -42,7 +43,7 @@
     </header>
 
     <main>
-        <section class="hero background-hero" style="background-image: url('assets/bg_italia.jpeg');" aria-label="Intestazione principale">
+        <section class="hero background-hero" style="background-image: url('media/assets/bg_italia.jpeg');" aria-label="Intestazione principale">
             <div class="hero__contenuto">
                 <span class="hero__etichetta">Italia</span>
                 <h1 class="hero__titolo">Tour<br /> Italia Centrale</h1>
@@ -148,6 +149,18 @@
             </div>
         </section>
         
+
+
+        <script>    
+        const hamburger = document.getElementById('hamburger');
+        const menu = document.getElementById('menu-principale');
+        hamburger.addEventListener('click', function () {
+            const aperto = menu.classList.toggle('aperto');
+            hamburger.classList.toggle('aperto', aperto);
+            hamburger.setAttribute('aria-expanded', aperto);
+        });
+        </script>
+    </main>
   <!-- ===== FOOTER ===== -->
   <footer class="footer" role="contentinfo">
     <div class="contenitore">
@@ -207,9 +220,6 @@
 
     </div>
   </footer>
-
-    </main>
-
 </body>
 
 </html>

@@ -505,7 +505,7 @@ strong { font-weight: 600; color: var(--colore-testo); }
   .contenitore { padding: 0 var(--spazio-xl); }
 
   .navbar__menu {
-    display: flex !important;
+    display: flex;
     flex-direction: row;
     position: static;
     width: auto;
@@ -743,7 +743,40 @@ strong { font-weight: 600; color: var(--colore-testo); }
 .sidebar__contatto-link:last-child {
   border-bottom: none;
 }
+.lista-itinerario::before {
+  position: absolute;
+  display: block;
+  border-left: 1px dashed orange;
+  width: 1px;
+  left: 5px;
+  bottom: 5px;
+  top: 5px;
+  content: "";
+}
 
+.lista-itinerario {
+  position: relative;
+  list-style: none;
+  margin-bottom: 15px;
+}
+
+.lista-itinerario .elemento-itinerario::before {
+  background: orange;
+  border: 1px solid #cda434;
+  border-radius: 10px;
+  content: "";
+  display: block;
+  height: 11px;
+  left: 0;
+  position: absolute;
+  top: 5px;
+  width: 11px;
+}
+
+.lista-itinerario .elemento-itinerario {
+  padding-left: 1.5rem;
+  position: relative;
+}
 
 /* ================================================
    MEDIA QUERY — Tablet (min 768px)

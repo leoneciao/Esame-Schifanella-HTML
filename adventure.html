@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="its">
 
 <head>
     <meta charset="UTF-8">
@@ -26,8 +26,9 @@
                 <a href="adventure.html" class="navbar__link attivo">Adventure</a>
                 <a href="comfort.html" class="navbar__link">Comfort</a>
                 <a href="luxury.html" class="navbar__link">Luxury</a>
-                <a href="about.html" class="navbar__link">Chi Siamo</a>
-                <a href="contatti.html" class="navbar__link">Contatti</a>
+                <a href="about.html"      class="navbar__link">Chi Siamo/Contatti</a>
+                <a href="prenotazione.html" class="navbar__link">Prenota</a>
+                <a href="promo.html"       class="navbar__link">Promo</a>
             </nav>
 
             <!-- Hamburger mobile -->
@@ -42,7 +43,7 @@
     </header>
 
     <main>
-        <section class="hero background-hero" style="background-image: url('assets/bg_messico.jpeg'); "
+        <section class="hero background-hero" style="background-image: url('media/assets/bg_messico.jpeg'); "
             aria-label="Intestazione principale">
             <div class="hero__contenuto">
                 <span class="hero__etichetta">Messico</span>
@@ -182,6 +183,17 @@
 
         </section>
 
+
+        <script>    
+        const hamburger = document.getElementById('hamburger');
+        const menu = document.getElementById('menu-principale');
+        hamburger.addEventListener('click', function () {
+            const aperto = menu.classList.toggle('aperto');
+            hamburger.classList.toggle('aperto', aperto);
+            hamburger.setAttribute('aria-expanded', aperto);
+        });
+        </script>
+    </main>
         <!-- ===== FOOTER ===== -->
         <footer class="footer" role="contentinfo">
             <div class="contenitore">
@@ -194,7 +206,7 @@
                         <p
                             style="font-size: var(--fs-piccolo); color: rgba(255,255,255,0.55); margin-bottom: var(--spazio-m); max-width: 260px;">
                             Agenzia di viaggi specializzata in esperienze su misura
-                            per ogni tipo di viaggiatore dal 2010.
+                            per ogni tipo di viaggiatore dal 2026.
                         </p>
                         <address
                             style="font-style: normal; font-size: var(--fs-piccolo); color: rgba(255,255,255,0.5); line-height: 1.8;">
@@ -239,15 +251,12 @@
                 </div>
 
                 <div class="footer__basso">
-                    <p>&copy; 2025 COREP's Travel — Tutti i diritti riservati</p>
+                    <p>&copy; 2026 COREP's Travel — Tutti i diritti riservati</p>
                     <p>P.IVA 01234567890 — REA RM-123456</p>
                 </div>
 
             </div>
         </footer>
-
-    </main>
-
 </body>
 
 </html>
