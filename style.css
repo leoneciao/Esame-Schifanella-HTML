@@ -1,6 +1,5 @@
 /* ================================================
    style.css — COREP's Travel
-   Mobile First
    ================================================ */
 
 @import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Open+Sans:wght@400;600&display=swap');
@@ -492,7 +491,7 @@ strong { font-weight: 600; color: var(--colore-testo); }
    TEAM CARD
 ------------------------------------------------ */
 .team-card { background-color: var(--colore-bianco); border-radius: var(--raggio-lg); padding: var(--spazio-l); text-align: center; box-shadow: var(--ombra); border: 1px solid var(--colore-bordo); }
-.team-card__foto { width: 90px; height: 90px; border-radius: 50%; object-fit: cover; margin: 0 auto var(--spazio-m); border: 3px solid var(--colore-accento); }
+.team-card__foto { width: 140px; height: 140px; border-radius: 80%; object-fit: cover; margin: 0 auto var(--spazio-m); border: 3px solid var(--colore-accento); }
 .team-card__nome { font-size: var(--fs-medio); margin-bottom: var(--spazio-xs); color: var(--colore-primario); }
 .team-card__ruolo { font-size: var(--fs-piccolo); color: var(--colore-testo-chiaro); text-transform: uppercase; letter-spacing: 0.06em; }
 
@@ -506,7 +505,7 @@ strong { font-weight: 600; color: var(--colore-testo); }
   .contenitore { padding: 0 var(--spazio-xl); }
 
   .navbar__menu {
-    display: flex !important;
+    display: flex;
     flex-direction: row;
     position: static;
     width: auto;
@@ -744,7 +743,40 @@ strong { font-weight: 600; color: var(--colore-testo); }
 .sidebar__contatto-link:last-child {
   border-bottom: none;
 }
+.lista-itinerario::before {
+  position: absolute;
+  display: block;
+  border-left: 1px dashed orange;
+  width: 1px;
+  left: 5px;
+  bottom: 5px;
+  top: 5px;
+  content: "";
+}
 
+.lista-itinerario {
+  position: relative;
+  list-style: none;
+  margin-bottom: 15px;
+}
+
+.lista-itinerario .elemento-itinerario::before {
+  background: orange;
+  border: 1px solid #cda434;
+  border-radius: 10px;
+  content: "";
+  display: block;
+  height: 11px;
+  left: 0;
+  position: absolute;
+  top: 5px;
+  width: 11px;
+}
+
+.lista-itinerario .elemento-itinerario {
+  padding-left: 1.5rem;
+  position: relative;
+}
 
 /* ================================================
    MEDIA QUERY — Tablet (min 768px)
@@ -793,5 +825,272 @@ strong { font-weight: 600; color: var(--colore-testo); }
     flex: 1;
     position: sticky;
     top: calc(var(--altezza-nav) + var(--spazio-l));
+  }
+}
+
+/* ================================================
+   promo.css
+   ================================================ */
+
+
+/* ================================================
+   BANNER SCADENZA
+   ================================================ */
+
+.banner-scadenza {
+  background-color: var(--colore-accento);
+  color: var(--colore-bianco);
+  text-align: center;
+  padding: var(--spazio-m) var(--spazio-l);
+}
+
+.banner-testo {
+  font-size: var(--fs-piccolo);
+  letter-spacing: 0.02em;
+}
+
+
+/* ================================================
+   INTRO E GRIGLIA
+   ================================================ */
+
+.promo-intro {
+  color: var(--colore-testo-chiaro);
+  max-width: 540px;
+  margin: 0 auto var(--spazio-xl);
+}
+
+.promo-griglia {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--spazio-xl);
+}
+
+
+/* ================================================
+   CARD PROMOZIONE
+   ================================================ */
+
+.promo-card {
+  position: relative;
+  background-color: var(--colore-bianco);
+  border: 1px solid var(--colore-bordo);
+  border-radius: var(--raggio-lg);
+  box-shadow: var(--ombra);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: transform var(--transizione), box-shadow var(--transizione);
+}
+
+.promo-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
+}
+
+
+/* ---- BADGE SCONTO ---- */
+
+.card-sconto {
+  position: absolute;
+  top: var(--spazio-m);
+  right: var(--spazio-m);
+  background-color: #c0392b;
+  color: var(--colore-bianco);
+  font-size: 13px;
+  font-weight: 700;
+  padding: 5px 12px;
+  border-radius: 999px;
+  z-index: 1;
+  letter-spacing: 0.03em;
+}
+
+.card-sconto-popolare {
+  background-color: #e67e22;
+  font-size: 11px;
+}
+
+
+/* ---- HEADER CARD ---- */
+
+.card-header {
+  padding: var(--spazio-xl) var(--spazio-l) var(--spazio-l);
+  text-align: center;
+  color: var(--colore-bianco);
+}
+
+.card-header-giappone { background: linear-gradient(135deg, #c0392b, #e74c3c); }
+.card-header-maldive  { background: linear-gradient(135deg, #0e7490, #06b6d4); }
+.card-header-marocco  { background: linear-gradient(135deg, #92400e, #d97706); }
+.card-header-norvegia { background: linear-gradient(135deg, #1e3a5f, #2980b9); }
+
+.card-emoji {
+  display: block;
+  font-size: 3rem;
+  margin-bottom: var(--spazio-s);
+  line-height: 1;
+}
+
+.card-destinazione {
+  font-family: var(--font-titoli);
+  font-size: 1.8rem;
+  font-weight: 800;
+  color: var(--colore-bianco);
+  margin-bottom: var(--spazio-xs);
+  line-height: 1.1;
+}
+
+.card-sottotitolo {
+  font-size: var(--fs-piccolo);
+  color: rgba(255, 255, 255, 0.8);
+  margin: 0;
+}
+
+
+/* ---- CORPO CARD ---- */
+
+.card-corpo {
+  padding: var(--spazio-l);
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  gap: var(--spazio-l);
+}
+
+
+/* ---- PREZZI ---- */
+
+.card-prezzi {
+  display: flex;
+  align-items: baseline;
+  gap: var(--spazio-m);
+  flex-wrap: wrap;
+}
+
+.prezzo-vecchio {
+  font-size: var(--fs-medio);
+  color: var(--colore-testo-chiaro);
+  text-decoration: line-through;
+}
+
+.prezzo-nuovo {
+  font-family: var(--font-titoli);
+  font-size: 2rem;
+  font-weight: 800;
+  color: var(--colore-primario);
+}
+
+.per-persona {
+  font-size: var(--fs-piccolo);
+  color: var(--colore-testo-chiaro);
+}
+
+
+/* ---- DETTAGLI VIAGGIO ---- */
+
+.card-dettagli {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: var(--spazio-xs);
+  background-color: var(--colore-sfondo);
+  border-radius: var(--raggio);
+  padding: var(--spazio-m);
+  border: 1px solid var(--colore-bordo);
+}
+
+.card-dettagli li {
+  font-size: var(--fs-piccolo);
+  color: var(--colore-testo);
+  padding-left: var(--spazio-m);
+  position: relative;
+}
+
+/* ::before — aggiunge il simbolo prima del testo */
+.card-dettagli li::before {
+  content: "›";
+  position: absolute;
+  left: 0;
+  color: var(--colore-accento);
+  font-weight: 700;
+}
+
+.card-dettagli strong {
+  color: var(--colore-accento);
+}
+
+
+/* ---- LISTA CON SPUNTA ---- */
+
+.lista-spunta {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: var(--spazio-s);
+  margin-bottom: var(--spazio-m);
+}
+
+.lista-spunta li {
+  font-size: var(--fs-base);
+  color: var(--colore-testo-chiaro);
+  padding-left: 1.5rem;
+  position: relative;
+}
+
+/* ::before — aggiunge la spunta */
+.lista-spunta li::before {
+  content: '✓';
+  position: absolute;
+  left: 0;
+  color: var(--colore-accento);
+  font-weight: 700;
+}
+
+
+/* ---- BOTTONE PRENOTA ---- */
+
+.card-bottone {
+  width: 100%;
+  text-align: center;
+  margin-top: auto;
+}
+
+.card-bottone:focus {
+  outline: 3px solid var(--colore-accento);
+  outline-offset: 3px;
+}
+
+
+/* ================================================
+   NOTA PREZZI
+   ================================================ */
+
+.promo-nota {
+  font-size: 12px;
+  color: var(--colore-testo-chiaro);
+  line-height: 1.6;
+  margin-top: var(--spazio-m);
+  margin-bottom: 0;
+}
+
+
+/* ================================================
+   CTA FINALE
+   ================================================ */
+
+.cta-testo {
+  color: rgba(255, 255, 255, 0.75);
+  max-width: 520px;
+  margin: 0 auto var(--spazio-xl);
+}
+
+
+/* ================================================
+   MEDIA QUERY — Desktop (min 900px)
+   ================================================ */
+
+@media (min-width: 900px) {
+  .promo-griglia {
+    grid-template-columns: repeat(2, 1fr);
   }
 }
