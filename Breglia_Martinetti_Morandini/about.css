@@ -1,0 +1,12 @@
+/* ================================================
+   about.css — COREP's Travel
+   Stili specifici della pagina Chi Siamo / Contatti
+   ================================================ */
+
+/* ------------------------------------------------
+   TEAM CARD
+------------------------------------------------ */
+.team-card { background-color: var(--colore-bianco); border-radius: var(--raggio-lg); padding: var(--spazio-l); text-align: center; box-shadow: var(--ombra); border: 1px solid var(--colore-bordo); }
+.team-card__foto { width: 140px; height: 140px; border-radius: 80%; object-fit: cover; margin: 0 auto var(--spazio-m); border: 3px solid var(--colore-accento); }
+.team-card__nome { font-size: var(--fs-medio); margin-bottom: var(--spazio-xs); color: var(--colore-primario); }
+.team-card__ruolo { font-size: var(--fs-piccolo); color: var(--colore-testo-chiaro); text-transform: uppercase; letter-spacing: 0.06em; }

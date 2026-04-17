@@ -1,0 +1,108 @@
+/* ================================================
+   pacchetti.css — COREP's Travel
+   Stili specifici delle pagine Adventure, Comfort, Luxury
+   ================================================ */
+
+/* --- HERO CON IMMAGINE DI SFONDO (pagine pacchetto) --- */
+.background-hero {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding: calc(var(--altezza-nav) + var(--spazio-xl)) var(--spazio-m) var(--spazio-xl);
+  min-height: 60vh;        /* più basso dell'index che fa 100vh */
+}
+
+/* L'overlay scuro per leggibilità del testo */
+.background-hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-color: rgba(10, 30, 50, 0.5);
+  z-index: 0;
+}
+
+/* Il contenuto deve stare sopra l'overlay */
+.background-hero .hero__contenuto {
+  position: relative;
+  z-index: 1;
+}
+
+/* ------------------------------------------------
+   LAYOUT DUE COLONNE (variante senza allineamento centrato)
+   Usato nelle pagine pacchetto per testo + sidebar
+------------------------------------------------ */
+.layout-due-colonne-no-center {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spazio-xl);
+}
+
+@media (min-width: 768px) {
+  .layout-due-colonne-no-center {
+    flex-direction: row;
+    align-items: flex-start;
+  }
+  .layout-due-colonne-no-center .layout-due-colonne__testo   { flex: 1; }
+  .layout-due-colonne-no-center .layout-due-colonne__immagine { flex: 0 0 300px; }
+}
+
+/* ------------------------------------------------
+   BOX INFO (sidebar delle pagine pacchetto)
+------------------------------------------------ */
+.box-info {
+  background-color: var(--colore-bianco);
+  border-radius: var(--raggio-lg);
+  border: 1px solid var(--colore-bordo);
+  padding: var(--spazio-l);
+  box-shadow: var(--ombra);
+  display: flex;
+  flex-direction: column;
+  gap: var(--spazio-m);
+}
+
+.box-info__titolo {
+  font-family: var(--font-titoli);
+  font-size: var(--fs-medio);
+  color: var(--colore-primario);
+  margin-bottom: 0;
+  padding-bottom: var(--spazio-s);
+  border-bottom: 2px solid var(--colore-accento);
+}
+
+/* ------------------------------------------------
+   LISTA ITINERARIO (usata in luxury.html)
+------------------------------------------------ */
+.lista-itinerario::before {
+  position: absolute;
+  display: block;
+  border-left: 1px dashed orange;
+  width: 1px;
+  left: 5px;
+  bottom: 5px;
+  top: 5px;
+  content: "";
+}
+
+.lista-itinerario {
+  position: relative;
+  list-style: none;
+  margin-bottom: 15px;
+}
+
+.lista-itinerario .elemento-itinerario::before {
+  background: orange;
+  border: 1px solid #cda434;
+  border-radius: 10px;
+  content: "";
+  display: block;
+  height: 11px;
+  left: 0;
+  position: absolute;
+  top: 5px;
+  width: 11px;
+}
+
+.lista-itinerario .elemento-itinerario {
+  padding-left: 1.5rem;
+  position: relative;
+}
